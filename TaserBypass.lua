@@ -3,4 +3,4 @@ game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
             game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
             game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
             end)
-            print("Executed")
+            print("")
