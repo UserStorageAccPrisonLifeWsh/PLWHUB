@@ -8,11 +8,11 @@ local function teleportAndReturn()
     local originalPosition = humanoidRootPart.CFrame
 
     humanoidRootPart.CFrame = targetPosition
-    print("Spieler wurde teleportiert!")
+    print("")
 
     task.wait(2)
     humanoidRootPart.CFrame = originalPosition
-    print("Spieler wurde zurück teleportiert!")
+    print("")
 end
 
 teleportAndReturn()
