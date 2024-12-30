@@ -56,17 +56,33 @@ Teleport.Name = "Teleport"
 Teleport.Position = UDim2.new(0.517879, 0, 0.186186, 0)
 Teleport.Size = UDim2.new(0, 122, 0, 35)
 Teleport.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-Teleport.BackgroundTransparency = 0.800000011920929
+Teleport.BackgroundTransparency = 0.8
 Teleport.BorderSizePixel = 0
-Teleport.BorderColor3 = Color3.new(0, 0, 0)
-Teleport.Transparency = 0.800000011920929
 Teleport.Text = "<Username>"
 Teleport.TextColor3 = Color3.new(1, 1, 1)
 Teleport.TextSize = 15
-Teleport.TextTransparency = 0
 Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 Teleport.TextWrapped = true
 Teleport.Parent = SpecificPlayers
+
+-- Funktion zum Teleportieren eines Spielers
+local function teleportToPlayer(playerName)
+    local localPlayer = game.Players.LocalPlayer
+    local targetPlayer = game.Players:FindFirstChild(playerName)
+
+    if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        localPlayer.Character:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
+    else
+        warn("Spieler nicht gefunden oder ungültig: " .. playerName)
+    end
+end
+
+-- Event, das ausgelöst wird, wenn der Spieler die Eingabe beendet
+Teleport.FocusLost:Connect(function(enterPressed)
+    if enterPressed then
+        teleportToPlayer(Teleport.Text)
+    end
+end)
 
 local TaseUser = Instance.new("TextBox")
 TaseUser.Name = "TaseUser"
@@ -157,4 +173,8 @@ Title.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.F
 Title.TextScaled = true
 Title.TextWrapped = true
 Title.Parent = WHubAddon
+
+
+
+
 
