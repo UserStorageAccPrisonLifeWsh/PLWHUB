@@ -25,6 +25,7 @@ local function monitorAndReset()
     end
 end
 
+print("DeathPosi Works!")
 
 monitorAndReset()
 
@@ -34,4 +35,5 @@ while true do
     local monitorAndReset = False 
     wait(2)
     local monitorAndReset = true 
+    print("DeathPosi Reload!")
 end
