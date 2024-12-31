@@ -1,34 +1,9 @@
 -- Instand Stuff:
 
-
-local function safeLoadString(url)
-    local success, result = pcall(function()
-        return game:HttpGet(url)
-    end)
-    if success then
-        local loadSuccess, loadErr = pcall(function()
-            loadstring(result)()
-        end)
-        if not loadSuccess then
-            warn("Fehler beim Ausführen des Skripts: " .. loadErr)
-        end
-    else
-        warn("Fehler beim Abrufen der URL: " .. result)
-    end
-end
-
--- URLs der Skripte
-local scripts = {
-    "https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua",
-    "https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/ToolBar.lua",
-    "https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/WalkAndJump.lua",
-    "https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Ui/PlayersUi.lua"
-}
-
--- Skripte laden
-for _, url in ipairs(scripts) do
-    safeLoadString(url)
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Ui/PlayersUi.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/WalkAndJump.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/ToolBar.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua"))()
 
 -- UI & Scripts:
 
