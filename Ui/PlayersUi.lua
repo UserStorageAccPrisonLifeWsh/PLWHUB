@@ -20,10 +20,10 @@ SpecificPlayers.Name = "SpecificPlayers"
 SpecificPlayers.Position = UDim2.new(0.671028, 0, 0.2759, 0)
 SpecificPlayers.Size = UDim2.new(0, 285, 0, 411)
 SpecificPlayers.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-SpecificPlayers.BackgroundTransparency = 0.30000001192092896
+SpecificPlayers.BackgroundTransparency = 0.15
 SpecificPlayers.BorderSizePixel = 0
 SpecificPlayers.BorderColor3 = Color3.new(0, 0, 0)
-SpecificPlayers.Transparency = 0.30000001192092896
+SpecificPlayers.Transparency = 0.15
 SpecificPlayers.Parent = WHubAddon
 
 local UICorner = Instance.new("UICorner")
@@ -199,10 +199,10 @@ Main.Name = "Main"
 Main.Position = UDim2.new(0.321317, 0, 0.2759, 0)
 Main.Size = UDim2.new(0, 650, 0, 411)
 Main.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-Main.BackgroundTransparency = 0.20
+Main.BackgroundTransparency = 0.15
 Main.BorderSizePixel = 0
 Main.BorderColor3 = Color3.new(0, 0, 0)
-Main.Transparency = 0.20
+Main.Transparency = 0.15
 Main.Parent = WHub2
 
 local MainParts = Instance.new("Folder")
