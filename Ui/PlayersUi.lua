@@ -804,7 +804,8 @@ UICorner.Parent = Main
 -- Im Working on It
 -- ~Julia
 
--- KEYCARED!!
+
+
 
 
 
@@ -840,11 +841,7 @@ while true do
 end
 
 
----------------------
-
-
-
----------------------
+--------------------------------------------------------------------------------
 
 
 local player = game.Players.LocalPlayer
