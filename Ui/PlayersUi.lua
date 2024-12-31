@@ -30,15 +30,6 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = SpecificPlayers
 
-
-----------------------------------------------------------------
-----------------------------------------------------------------
-
--- U HIDE SHOW
-
-----------------------------------------------------------------
-----------------------------------------------------------------
-
 local Tp = Instance.new("TextLabel")
 Tp.Name = "Tp"
 Tp.Position = UDim2.new(0.0509676, 0, 0.186186, 0)
@@ -829,6 +820,32 @@ UICorner.Parent = Main
                     -- More Stuff
 -----------------------------------------------------------
 
+
+local targetWalkSpeed = 29
+local targetJumpPower = 55
+
+local player = game.Players.LocalPlayer
+
+local function updateCharacterProperties()
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        local humanoid = player.Character.Humanoid
+        humanoid.WalkSpeed = targetWalkSpeed
+        humanoid.JumpPower = targetJumpPower
+    end
+end
+
+while true do
+    updateCharacterProperties()
+    wait(0.1)
+end
+
+
+
+
+
+ -------------------
+
+
 local player = game.Players.LocalPlayer
 local originalCFrame
 
@@ -871,38 +888,6 @@ while true do
     wait(0.1)
 end
 print("ToolBar Works!")
-
-
-
-local targetWalkSpeed = 29
-local targetJumpPower = 55
-
-local player = game.Players.LocalPlayer
-
-local function updateCharacterProperties()
-    if player.Character and player.Character:FindFirstChild("Humanoid") then
-        local humanoid = player.Character.Humanoid
-        humanoid.WalkSpeed = targetWalkSpeed
-        humanoid.JumpPower = targetJumpPower
-    end
-end
-
-while true do
-    updateCharacterProperties()
-    wait(0.1)
-end
-
-
-
-while true do
-    wait("15")
-    local updateCharacterProperties = False 
-    wait(2.5)
-    local updateCharacterProperties = true 
-    print("WalkAndJump Reload!")
-end
-
-
 
 
 
