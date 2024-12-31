@@ -8,7 +8,7 @@
 
 -- 29.12.2024
 
-Print(Weshky Hub: Start Loading Everything!)
+Print("Weshky Hub: Start Loading Everything!")
 
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
