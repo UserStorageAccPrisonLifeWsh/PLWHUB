@@ -1,4 +1,4 @@
-local targetWalkSpeed = 32
+local targetWalkSpeed = 29
 local targetJumpPower = 55
 
 local player = game.Players.LocalPlayer
