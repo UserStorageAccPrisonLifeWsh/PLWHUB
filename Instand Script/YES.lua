@@ -15,3 +15,27 @@ while true do
     updateCharacterProperties()
     wait(0.1)
 end
+
+
+
+
+local StarterGui = game:GetService("StarterGui")
+local toolbarVisible = true 
+
+while true do
+    toolbarVisible = toolbarVisible
+    StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, toolbarVisible)
+    wait(0.1)
+end
+print("ToolBar Works!")
+
+
+
+
+while true do
+    wait("15")
+    local toolbarVisible = False 
+    wait(2.5)
+    local toolbarVisible = true 
+    print("ToolBar Reload!")
+end
