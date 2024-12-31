@@ -16,10 +16,10 @@ Main.Name = "Main"
 Main.Position = UDim2.new(0.321317, 0, 0.2759, 0)
 Main.Size = UDim2.new(0, 650, 0, 411)
 Main.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-Main.BackgroundTransparency = 0.25
+Main.BackgroundTransparency = 0.20
 Main.BorderSizePixel = 0
 Main.BorderColor3 = Color3.new(0, 0, 0)
-Main.Transparency = 0.25
+Main.Transparency = 0.20
 Main.Parent = WHub2
 
 local MainParts = Instance.new("Folder")
