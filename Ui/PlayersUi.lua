@@ -8,6 +8,7 @@
 
 -- 29.12.2024
 
+Print(| Weshky Hub: Start Loading Everything! |)
 
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
@@ -183,6 +184,7 @@ Title.TextScaled = true
 Title.TextWrapped = true
 Title.Parent = WHubAddon
 
+Print("| Weshky Hub: PlayersUi Has Been Loaded! |")
 ----------------------------------------------------------
                         -- Main UI
 ----------------------------------------------------------
@@ -797,6 +799,8 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = Main
 
+Print("| Weshky Hub: MainUI Has Been Loaded! |")
+
 ----------------------------------------------------------
                     -- Buttons
 ----------------------------------------------------------
@@ -821,6 +825,7 @@ UICorner.Parent = Main
                     -- More Stuff
 -----------------------------------------------------------
 
+Print("| Weshky Hub: Instand Scripts Has Benen Loaded! |")
 
 local targetWalkSpeed = 29
 local targetJumpPower = 55
@@ -871,7 +876,7 @@ local function monitorAndReset()
     end
 end
 
-print("DeathPosi Works!")
+Print("| Weshky Hub: Everything Has Ben Loaded! |")
 
 monitorAndReset()
 
