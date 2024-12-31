@@ -6,6 +6,9 @@
 -- Main Developer: Sxirbes
 -- Main Script: Julia
 
+-- 29.12.2024
+
+
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
 WHubAddon.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -26,6 +29,15 @@ local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
 
 UICorner.Parent = SpecificPlayers
+
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+-- U HIDE SHOW
+
+----------------------------------------------------------------
+----------------------------------------------------------------
 
 local Tp = Instance.new("TextLabel")
 Tp.Name = "Tp"
@@ -795,8 +807,113 @@ UICorner.Name = "UICorner"
 UICorner.Parent = Main
 
 ----------------------------------------------------------
-                    -- More Stuff
+                    -- Buttons
 ----------------------------------------------------------
+
+-- Im Working on It
+-- ~Julia
+
+-- KEYCARED!!
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+                    -- More Stuff
+-----------------------------------------------------------
+
+local player = game.Players.LocalPlayer
+local originalCFrame
+
+local function monitorAndReset()
+    while true do
+        local character = player.Character or player.CharacterAdded:Wait()
+        local humanoid = character:WaitForChild("Humanoid")
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+        task.spawn(function()
+            while humanoid.Health > 0 do
+                originalCFrame = humanoidRootPart.CFrame
+                wait(5.5)
+            end
+        end)
+
+        humanoid.Died:Wait()
+        print("")
+        wait(1)
+
+        local newCharacter = player.CharacterAdded:Wait()
+        local newHumanoidRootPart = newCharacter:WaitForChild("HumanoidRootPart")
+        newHumanoidRootPart.CFrame = originalCFrame
+        print("")
+    end
+end
+
+print("DeathPosi Works!")
+
+monitorAndReset()
+
+
+
+local StarterGui = game:GetService("StarterGui")
+local toolbarVisible = true 
+
+while true do
+    toolbarVisible = toolbarVisible
+    StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, toolbarVisible)
+    wait(0.1)
+end
+print("ToolBar Works!")
+
+
+
+local targetWalkSpeed = 29
+local targetJumpPower = 55
+
+local player = game.Players.LocalPlayer
+
+local function updateCharacterProperties()
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        local humanoid = player.Character.Humanoid
+        humanoid.WalkSpeed = targetWalkSpeed
+        humanoid.JumpPower = targetJumpPower
+    end
+end
+
+while true do
+    updateCharacterProperties()
+    wait(0.1)
+end
+
+
+
+while true do
+    wait("15")
+    local updateCharacterProperties = False 
+    wait(2.5)
+    local updateCharacterProperties = true 
+    print("WalkAndJump Reload!")
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
