@@ -6,7 +6,7 @@ while true do
     StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, toolbarVisible)
     wait(0.1)
 end
-
+print("ToolBar Works!")
 
 
 
@@ -16,4 +16,5 @@ while true do
     local toolbarVisible = False 
     wait(2.5)
     local toolbarVisible = true 
+    print("ToolBar Reload!")
 end
