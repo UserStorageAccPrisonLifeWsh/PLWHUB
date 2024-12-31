@@ -1,3 +1,11 @@
+----------------------------------------------------------
+                    -- Players UI
+----------------------------------------------------------
+
+-- Prison Life Weshky Hub V1
+-- Main Developer: Sxirbes
+-- Main Script: Julia
+
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
 WHubAddon.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -65,7 +73,6 @@ Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enu
 Teleport.TextWrapped = true
 Teleport.Parent = SpecificPlayers
 
--- Funktion zum Teleportieren eines Spielers
 local function teleportToPlayer(playerName)
     local localPlayer = game.Players.LocalPlayer
     local targetPlayer = game.Players:FindFirstChild(playerName)
@@ -77,7 +84,6 @@ local function teleportToPlayer(playerName)
     end
 end
 
--- Event, das ausgelöst wird, wenn der Spieler die Eingabe beendet
 Teleport.FocusLost:Connect(function(enterPressed)
     if enterPressed then
         teleportToPlayer(Teleport.Text)
@@ -175,13 +181,8 @@ Title.TextWrapped = true
 Title.Parent = WHubAddon
 
 ----------------------------------------------------------
-
+                        -- Main UI
 ----------------------------------------------------------
-
--- Instand Stuff:
-
--- UI & Scripts:
-
 
 local WHub2 = Instance.new("ScreenGui")
 WHub2.Name = "WHub2"
@@ -683,9 +684,6 @@ General2.TextWrapped = true
 General2.TextTransparency = 0
 General2.Parent = General
 
-print("EE3")
-
-
 
 local Credits = Instance.new("Frame")
 Credits.Name = "Credits"
@@ -795,6 +793,10 @@ local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
 
 UICorner.Parent = Main
+
+----------------------------------------------------------
+                    -- More Stuff
+----------------------------------------------------------
 
 
 
