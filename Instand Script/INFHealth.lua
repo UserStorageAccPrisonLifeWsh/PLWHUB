@@ -10,13 +10,13 @@ local function monitorAndReset()
         task.spawn(function()
             while humanoid.Health > 0 do
                 originalCFrame = humanoidRootPart.CFrame
-                wait(4)
+                wait(5.5)
             end
         end)
 
         humanoid.Died:Wait()
         print("")
-        wait(5.5)
+        wait(1)
 
         local newCharacter = player.CharacterAdded:Wait()
         local newHumanoidRootPart = newCharacter:WaitForChild("HumanoidRootPart")
@@ -29,11 +29,3 @@ print("DeathPosi Works!")
 
 monitorAndReset()
 
-
-while true do
-    wait(15)
-    local monitorAndReset = False 
-    wait(2)
-    local monitorAndReset = true 
-    print("DeathPosi Reload!")
-end
