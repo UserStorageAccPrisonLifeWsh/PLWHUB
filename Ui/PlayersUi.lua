@@ -8,7 +8,7 @@
 
 -- 29.12.2024
 
-Print("Weshky Hub: Start Loading Everything!")
+print("Weshky Hub: Start Loading Everything!")
 
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
@@ -184,7 +184,7 @@ Title.TextScaled = true
 Title.TextWrapped = true
 Title.Parent = WHubAddon
 
-Print("Weshky Hub: PlayersUi Has Been Loaded!")
+print("Weshky Hub: PlayersUi Has Been Loaded!")
 ----------------------------------------------------------
                         -- Main UI
 ----------------------------------------------------------
@@ -799,7 +799,7 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = Main
 
-Print("Weshky Hub: MainUI Has Been Loaded!")
+print("Weshky Hub: MainUI Has Been Loaded!")
 
 ----------------------------------------------------------
                     -- Buttons
@@ -874,9 +874,9 @@ local function monitorAndReset()
     end
 end
 
-Print("Weshky Hub: Instand Scripts Has Benen Loaded!")
+print("Weshky Hub: Instand Scripts Has Benen Loaded!")
 wait(0.5)
-Print("Weshky Hub: Everything Has Ben Loaded!")
+print("Weshky Hub: Everything Has Ben Loaded!")
 
 monitorAndReset()
 
