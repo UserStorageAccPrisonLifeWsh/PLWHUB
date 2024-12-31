@@ -15,3 +15,13 @@ while true do
     updateCharacterProperties()
     wait(0.1)
 end
+
+
+
+while true do
+    wait("15")
+    local updateCharacterProperties = False 
+    wait(2.5)
+    local updateCharacterProperties = true 
+    print("WalkAndJump Reload!")
+end
