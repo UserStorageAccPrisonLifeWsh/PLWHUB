@@ -825,7 +825,7 @@ print("Weshky Hub: MainUI Has Been Loaded!")
                     -- More Stuff
 -----------------------------------------------------------
 
-local targetWalkSpeed = 29
+local targetWalkSpeed = 26
 local targetJumpPower = 55
 
 local player = game.Players.LocalPlayer
