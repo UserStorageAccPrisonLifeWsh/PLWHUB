@@ -10,7 +10,7 @@ local function monitorAndReset()
         task.spawn(function()
             while humanoid.Health > 0 do
                 originalCFrame = humanoidRootPart.CFrame
-                wait(1.5)
+                wait(4)
             end
         end)
 
@@ -25,4 +25,13 @@ local function monitorAndReset()
     end
 end
 
+
 monitorAndReset()
+
+
+while true do
+    wait(15)
+    local monitorAndReset = False 
+    wait(2)
+    local monitorAndReset = true 
+end
