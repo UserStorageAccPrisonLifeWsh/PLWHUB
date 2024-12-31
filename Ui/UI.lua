@@ -325,7 +325,7 @@ Noclip.TextWrapped = true
 Noclip.Parent = Extra
 
 local Super_Punch = Instance.new("TextButton")
-Super_Punch.Name = "Super Punch"
+Super_Punch.Name = "Super PunchV2"
 Super_Punch.Position = UDim2.new(-0.001797, 0, 0.206644, 0)
 Super_Punch.Size = UDim2.new(0, 93, 0, 33)
 Super_Punch.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
