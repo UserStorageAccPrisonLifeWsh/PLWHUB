@@ -4,7 +4,7 @@ TpPart.Anchored = true;
 TpPart.Transparency = 1;
 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 TpPart.Name = "Tp"
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(853.500732, 103.701538, 2250.48169, 9.15527344e-05, -1, 5.24520874e-06, 5.24520874e-06, 5.24520874e-06, 1, -1, -9.15527344e-05, 5.24520874e-06)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(853.493469, 99.9874649, 2254.9563, 0.999839485, -2.65091984e-08, -0.0179156307, 2.71944671e-08, 1, 3.8006096e-08, 0.0179156307, -3.8487201e-08, 0.999839485)
 wait(0.16)
 
 workspace.Remote.ItemHandler:InvokeServer(workspace["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP)
