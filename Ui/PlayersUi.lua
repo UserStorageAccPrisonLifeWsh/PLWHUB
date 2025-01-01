@@ -841,6 +841,35 @@ JoinRed.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()    
 end)
 
+TaserBypass.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/TaserBypass.lua'),true))()    
+end)
+
+Super_Punch.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/SuperPunch.lua'),true))()    
+end)
+
+ArrestEveryone.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/ArrestCrims.lua'),true))()    
+end)
+
+Noclip.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Noclip.lua'),true))()    
+end)
+
+CarFly.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Carfly.lua'),true))()    
+end)
+
+KillAll.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/KillAll.lua'),true))()    
+end)
+
+TaseAll.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua'),true))()    
+end)
+
+
 print("Weshky Hub: Everything Has Been Loaded!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
@@ -900,7 +929,6 @@ local function monitorAndReset()
 end
 
 monitorAndReset()
-
 
 
 
