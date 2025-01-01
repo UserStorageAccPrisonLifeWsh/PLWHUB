@@ -9,7 +9,7 @@ wait(0.16)
 
 workspace.Remote.ItemHandler:InvokeServer(workspace["Prison_ITEMS"].giver["M9"].ITEMPICKUP)
 
-wait(0.3)
+wait(0.2)
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
 workspace.Tp:Destroy()
