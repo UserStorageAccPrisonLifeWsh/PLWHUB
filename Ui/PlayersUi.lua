@@ -850,6 +850,10 @@ TaseAll.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua'),true))()    
 end)
 
+AntiPunch.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
+end)
+
 print("Weshky Hub: Everything Has Been Loaded!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
