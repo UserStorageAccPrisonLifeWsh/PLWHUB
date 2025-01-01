@@ -1,4 +1,4 @@
-d----------------------------------------------------------
+----------------------------------------------------------
                     -- Players UI
 ----------------------------------------------------------
 
@@ -419,7 +419,7 @@ Fly.BackgroundTransparency = 0.800000011920929
 Fly.BorderSizePixel = 0
 Fly.BorderColor3 = Color3.new(0, 0, 0)
 Fly.Transparency = 0.800000011920929
-Fly.Text = "Fly"
+Fly.Text = "Fly [PC: F]"
 Fly.TextColor3 = Color3.new(1, 1, 1)
 Fly.TextSize = 16
 Fly.TextTransparency = 0
@@ -487,7 +487,7 @@ CarFly.BackgroundTransparency = 0.800000011920929
 CarFly.BorderSizePixel = 0
 CarFly.BorderColor3 = Color3.new(0, 0, 0)
 CarFly.Transparency = 0.800000011920929
-CarFly.Text = "Car Fly"
+CarFly.Text = "---"
 CarFly.TextColor3 = Color3.new(1, 1, 1)
 CarFly.TextSize = 16
 CarFly.TextTransparency = 0
@@ -822,10 +822,40 @@ JoinRed.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()    
 end)
 
+ArrestEveryone.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/ArrestCrims.lua'),true))()    
+end)
+
+Noclip.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Noclip.lua'),true))()    
+end)
+
+Super_Punch.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/SuperPunch.lua'),true))()    
+end)
+
+TaserBypass.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/TaserBypass.lua'),true))()    
+end)
+
+Fly.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua'),true))()    
+end)
+
+KillAll.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/KillAll.lua'),true))()    
+end)
+
+TaseAll.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua'),true))()    
+end)
+
 print("Weshky Hub: Everything Has Been Loaded!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
 print("-----------------------------------------------------")
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
 
 ----------------------------------------------------------
                     -- More Stuff
@@ -848,39 +878,6 @@ while true do
     updateCharacterProperties()
     wait(0.1)
 end
-
-
---------------------------------------------------------------------------------
-
-
-local player = game.Players.LocalPlayer
-local originalCFrame
-
-local function monitorAndReset()
-    while true do
-        local character = player.Character or player.CharacterAdded:Wait()
-        local humanoid = character:WaitForChild("Humanoid")
-        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-
-        task.spawn(function()
-            while humanoid.Health > 0 do
-                originalCFrame = humanoidRootPart.CFrame
-                wait(5.5)
-            end
-        end)
-
-        humanoid.Died:Wait()
-        print("")
-        wait(1)
-
-        local newCharacter = player.CharacterAdded:Wait()
-        local newHumanoidRootPart = newCharacter:WaitForChild("HumanoidRootPart")
-        newHumanoidRootPart.CFrame = originalCFrame
-        print("")
-    end
-end
-
-monitorAndReset()
 
 
 
