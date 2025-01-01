@@ -10,7 +10,7 @@ local function teleportAndReturn()
     humanoidRootPart.CFrame = targetPosition
     print("")
 
-    task.wait(2)
+    task.wait(0.5)
     humanoidRootPart.CFrame = originalPosition
     print("")
 end
