@@ -629,7 +629,7 @@ TPPRISON.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enu
 TPPRISON.TextScaled = true
 TPPRISON.TextWrapped = true
 TPPRISON.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-TPPRISON.Parent = Weapons
+TPPRISON.Parent = MainParts
 
 local Guns = Instance.new("TextLabel")
 Guns.Name = "Guns"
