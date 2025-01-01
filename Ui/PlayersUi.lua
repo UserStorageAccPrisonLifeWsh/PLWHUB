@@ -837,6 +837,10 @@ DexExploder.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua'),true))()    
 end)
 
+JoinRed.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua'),true))()    
+end)
+
 print("Weshky Hub: Everything Has Been Loaded!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
