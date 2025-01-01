@@ -622,13 +622,14 @@ TPPRISON.BackgroundTransparency = 0.800000011920929
 TPPRISON.BorderSizePixel = 0
 TPPRISON.BorderColor3 = Color3.new(0, 0, 0)
 TPPRISON.Transparency = 0.800000011920929
-TPPRISON.Text = "Shotgun M4A1 & Inf Ammor"
+TPPRISON.Text = "Teleport to Prison Roof"
 TPPRISON.TextColor3 = Color3.new(1, 1, 1)
 TPPRISON.TextSize = 14
 TPPRISON.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 TPPRISON.TextScaled = true
 TPPRISON.TextWrapped = true
 TPPRISON.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+TPPRISON.TextTransparency = 0
 TPPRISON.Parent = MainParts
 
 local Guns = Instance.new("TextLabel")
