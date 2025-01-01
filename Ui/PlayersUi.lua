@@ -8,7 +8,12 @@
 
 -- 29.12.2024
 
+print("-----------------------------------------------------")
+print("Thanks for using Weshky Hub, you can check out the Discord 50 Members = Update!")
+print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
+
+local UIS = game:GetService("UserInputService")
 
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
@@ -20,10 +25,10 @@ SpecificPlayers.Name = "SpecificPlayers"
 SpecificPlayers.Position = UDim2.new(0.671028, 0, 0.2759, 0)
 SpecificPlayers.Size = UDim2.new(0, 285, 0, 411)
 SpecificPlayers.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-SpecificPlayers.BackgroundTransparency = 0.15
+SpecificPlayers.BackgroundTransparency = 0.1
 SpecificPlayers.BorderSizePixel = 0
 SpecificPlayers.BorderColor3 = Color3.new(0, 0, 0)
-SpecificPlayers.Transparency = 0.15
+SpecificPlayers.Transparency = 0.1
 SpecificPlayers.Parent = WHubAddon
 
 local UICorner = Instance.new("UICorner")
@@ -199,10 +204,10 @@ Main.Name = "Main"
 Main.Position = UDim2.new(0.321317, 0, 0.2759, 0)
 Main.Size = UDim2.new(0, 650, 0, 411)
 Main.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-Main.BackgroundTransparency = 0.15
+Main.BackgroundTransparency = 0.1
 Main.BorderSizePixel = 0
 Main.BorderColor3 = Color3.new(0, 0, 0)
-Main.Transparency = 0.15
+Main.Transparency = 0.1
 Main.Parent = WHub2
 
 local MainParts = Instance.new("Folder")
@@ -808,24 +813,40 @@ print("Weshky Hub: MainUI Has Been Loaded!")
 -- Im Working on It
 -- ~Julia
 
+GetAK_47.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua'),true))()    
+end)
 
+GetM4A1.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/M4A1.lua'),true))()    
+end)
 
+GetRemington870.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Remington870.lua'),true))()    
+end)
 
+GetM9.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Pistol.lua'),true))()    
+end)
 
+InfiniteYield.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()    
+end)
 
+DexExploder.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua'),true))()    
+end)
 
-
-
-
-
-
-
+print("Weshky Hub: Everything Has Been Loaded!")
+print("-----------------------------------------------------")
+print("Weshky Hub: Possible problems with Instant Scripts!")
+print("-----------------------------------------------------")
 
 ----------------------------------------------------------
                     -- More Stuff
 -----------------------------------------------------------
 
-local targetWalkSpeed = 26
+local targetWalkSpeed = 29
 local targetJumpPower = 55
 
 local player = game.Players.LocalPlayer
@@ -874,12 +895,7 @@ local function monitorAndReset()
     end
 end
 
-print("Weshky Hub: Instand Scripts Has Benen Loaded!")
-wait(0.5)
-print("Weshky Hub: Everything Has Ben Loaded!")
-
 monitorAndReset()
-
 
 
 
