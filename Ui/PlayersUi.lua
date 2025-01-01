@@ -1,4 +1,4 @@
-----------------------------------------------------------
+d----------------------------------------------------------
                     -- Players UI
 ----------------------------------------------------------
 
@@ -623,7 +623,7 @@ Modded_Guns.BackgroundTransparency = 0.800000011920929
 Modded_Guns.BorderSizePixel = 0
 Modded_Guns.BorderColor3 = Color3.new(0, 0, 0)
 Modded_Guns.Transparency = 0.800000011920929
-Modded_Guns.Text = "Teleport Locations"
+Modded_Guns.Text = "Teleport Location"
 Modded_Guns.TextColor3 = Color3.new(1, 1, 1)
 Modded_Guns.TextSize = 31
 Modded_Guns.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
