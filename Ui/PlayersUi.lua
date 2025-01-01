@@ -283,41 +283,41 @@ GetM9.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.F
 GetM9.TextWrapped = true
 GetM9.Parent = MainParts
 
-local ModAk_47 = Instance.new("TextButton")
-ModAk_47.Name = "TPYARD"
-ModAk_47.Position = UDim2.new(0.018, 0, 0.894, 0)
-ModAk_47.Size = UDim2.new(0, 200, 0, 30)
-ModAk_47.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-ModAk_47.BackgroundTransparency = 0.800000011920929
-ModAk_47.BorderSizePixel = 0
-ModAk_47.BorderColor3 = Color3.new(0, 0, 0)
-ModAk_47.Transparency = 0.800000011920929
-ModAk_47.Text = "Teleport to Prison Yard"
-ModAk_47.TextColor3 = Color3.new(1, 1, 1)
-ModAk_47.TextSize = 20
-ModAk_47.TextTransparency = 0
-ModAk_47.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-ModAk_47.Parent = MainParts
+local TPYARD = Instance.new("TextButton")
+TPYARD.Name = "TPYARD"
+TPYARD.Position = UDim2.new(0.018, 0, 0.894, 0)
+TPYARD.Size = UDim2.new(0, 200, 0, 30)
+TPYARD.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+TPYARD.BackgroundTransparency = 0.800000011920929
+TPYARD.BorderSizePixel = 0
+TPYARD.BorderColor3 = Color3.new(0, 0, 0)
+TPYARD.Transparency = 0.800000011920929
+TPYARD.Text = "Teleport to Prison Yard"
+TPYARD.TextColor3 = Color3.new(1, 1, 1)
+TPYARD.TextSize = 20
+TPYARD.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TPYARD.TextTransparency = 0
+TPYARD.Parent = MainParts
 
-local ModM4A1 = Instance.new("TextButton")
-ModM4A1.Name = "TPARMORY"
-ModM4A1.Position = UDim2.new(0.018, 0, 0.797, 0)
-ModM4A1.Size = UDim2.new(0, 200, 0, 30)
-ModM4A1.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-ModM4A1.BackgroundTransparency = 0.800000011920929
-ModM4A1.BorderSizePixel = 0
-ModM4A1.BorderColor3 = Color3.new(0, 0, 0)
-ModM4A1.Transparency = 0.800000011920929
-ModM4A1.Text = "Teleport to Prison Armory"
-ModM4A1.TextColor3 = Color3.new(1, 1, 1)
-ModM4A1.TextSize = 18
-ModM4A1.TextTransparency = 0
-ModM4A1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-ModM4A1.TextWrapped = true
-ModM4A1.Parent = MainParts
+local TPNEXUS = Instance.new("TextButton")
+TPNEXUS.Name = "TPNEXUS"
+TPNEXUS.Position = UDim2.new(0.018, 0, 0.797, 0)
+TPNEXUS.Size = UDim2.new(0, 200, 0, 30)
+TPNEXUS.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+TPNEXUS.BackgroundTransparency = 0.800000011920929
+TPNEXUS.BorderSizePixel = 0
+TPNEXUS.BorderColor3 = Color3.new(0, 0, 0)
+TPNEXUS.Transparency = 0.800000011920929
+TPNEXUS.Text = "Teleport to Prison Nexus"
+TPNEXUS.TextColor3 = Color3.new(1, 1, 1)
+TPNEXUS.TextSize = 19
+TPNEXUS.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TPNEXUS.TextWrapped = true
+TPNEXUS.TextTransparency = 0
+TPNEXUS.Parent = MainParts
 
 local TPPRISON = Instance.new("TextButton")
-TPPRISON.Name = "TPCRIM"
+TPPRISON.Name = "TPPRISON"
 TPPRISON.Position = UDim2.new(0.019198, 0, 0.59262, 0)
 TPPRISON.Size = UDim2.new(0, 198, 0, 30)
 TPPRISON.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
@@ -330,25 +330,25 @@ TPPRISON.TextColor3 = Color3.new(1, 1, 1)
 TPPRISON.TextSize = 18
 TPPRISON.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 TPPRISON.TextWrapped = true
-TPPRISON.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 TPPRISON.TextTransparency = 0
 TPPRISON.Parent = MainParts
 
-local ModShotgun = Instance.new("TextButton")
-ModShotgun.Name = "TPPRISON"
-ModShotgun.Position = UDim2.new(0.018, 0, 0.697, 0)
-ModShotgun.Size = UDim2.new(0, 200, 0, 30)
-ModShotgun.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-ModShotgun.BackgroundTransparency = 0.800000011920929
-ModShotgun.BorderSizePixel = 0
-ModShotgun.BorderColor3 = Color3.new(0, 0, 0)
-ModShotgun.Transparency = 0.800000011920929
-ModShotgun.Text = "Teleport to Prison Roof"
-ModShotgun.TextColor3 = Color3.new(1, 1, 1)
-ModShotgun.TextSize = 20
-ModShotgun.TextTransparency = 0
-ModShotgun.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-ModShotgun.Parent = MainParts
+local TPARMORY = Instance.new("TextButton")
+TPARMORY.Name = "TPARMORY"
+TPARMORY.Position = UDim2.new(0.018, 0, 0.697, 0)
+TPARMORY.Size = UDim2.new(0, 200, 0, 30)
+TPARMORY.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+TPARMORY.BackgroundTransparency = 0.800000011920929
+TPARMORY.BorderSizePixel = 0
+TPARMORY.BorderColor3 = Color3.new(0, 0, 0)
+TPARMORY.Transparency = 0.800000011920929
+TPARMORY.Text = "Teleport to Prison Armory"
+TPARMORY.TextColor3 = Color3.new(1, 1, 1)
+TPARMORY.TextSize = 18
+TPARMORY.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TPARMORY.TextTransparency = 0
+TPARMORY.Parent = MainParts
+
 
 local DexExploder = Instance.new("TextButton")
 DexExploder.Name = "DexExploder"
@@ -538,7 +538,7 @@ Super_Punch.BackgroundTransparency = 0.800000011920929
 Super_Punch.BorderSizePixel = 0
 Super_Punch.BorderColor3 = Color3.new(0, 0, 0)
 Super_Punch.Transparency = 0.800000011920929
-Super_Punch.Text = "Super PunchV2"
+Super_Punch.Text = "Super Punch"
 Super_Punch.TextColor3 = Color3.new(1, 1, 1)
 Super_Punch.TextSize = 16
 Super_Punch.TextTransparency = 0
@@ -560,7 +560,8 @@ Version.BackgroundTransparency = 1
 Version.BorderSizePixel = 0
 Version.BorderColor3 = Color3.new(0, 0, 0)
 Version.Transparency = 1
-Version.Text = "Verison: 1.0"
+-- Version.Text = "Verison: 1.0"
+Version.Text = "https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Version"
 Version.TextColor3 = Color3.new(1, 1, 1)
 Version.TextSize = 14
 Version.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -614,7 +615,7 @@ Weapons.Transparency = 0.949999988079071
 Weapons.Parent = PartTitles
 
 local Modded_Guns = Instance.new("TextLabel")
-Modded_Guns.Name = "Teleport"
+Modded_Guns.Name = "TeleportPLUI"
 Modded_Guns.Position = UDim2.new(0.0232339, 0, 0.388132, 0)
 Modded_Guns.Size = UDim2.new(0, 200, 0, 37)
 Modded_Guns.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
@@ -701,7 +702,7 @@ General3.BackgroundTransparency = 0.800000011920929
 General3.BorderSizePixel = 0
 General3.BorderColor3 = Color3.new(0, 0, 0)
 General3.Transparency = 0.800000011920929
-General3.Text = "Main Developers: Sxirbes    Main UI and Script: Julia"
+General3.Text = "Main Developers: Sxirbes    Script and Ui: Julia"
 General3.TextColor3 = Color3.new(1, 1, 1)
 General3.TextSize = 16
 General3.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -822,35 +823,6 @@ JoinRed.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()    
 end)
 
-TaserBypass.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/TaserBypass.lua'),true))()    
-end)
-
-Super_Punch.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/SuperPunch.lua'),true))()    
-end)
-
-ArrestEveryone.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/ArrestCrims.lua'),true))()    
-end)
-
-Noclip.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Noclip.lua'),true))()    
-end)
-
-CarFly.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Carfly.lua'),true))()    
-end)
-
-KillAll.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/KillAll.lua'),true))()    
-end)
-
-TaseAll.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua'),true))()    
-end)
-
-
 print("Weshky Hub: Everything Has Been Loaded!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
@@ -910,6 +882,7 @@ local function monitorAndReset()
 end
 
 monitorAndReset()
+
 
 
 
