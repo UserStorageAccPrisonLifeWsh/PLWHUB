@@ -838,7 +838,7 @@ DexExploder.MouseButton1Down:connect(function()
 end)
 
 JoinRed.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()    
 end)
 
 print("Weshky Hub: Everything Has Been Loaded!")
