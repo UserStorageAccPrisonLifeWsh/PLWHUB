@@ -10,13 +10,10 @@ wait(0.16)
 
 workspace.Remote.ItemHandler:InvokeServer(workspace["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP)
 
-wait(0.5)
-
-weapon["Bullets"] = 6
+weapon["Bullets"] = 4
 weapon["Damage"] = 60
 weapon["AutoFire"] = true
-weapon["maxAmmos"] = 87
-weapon["FireRate"] = 0.25
+weapon["FireRate"] = 0.2
 weapon["MaxAmmo"] = 900001
 
 wait(0.2)
