@@ -28,6 +28,12 @@ local function teleportToDeathPosition()
     end
 end
 
+local function setWalkSpeed(speed)
+    if character and character:FindFirstChild("Humanoid") then
+        character.Humanoid.WalkSpeed = speed
+    end
+end
+
 local function monitorPlayer()
     while true do
         character = player.Character or player.CharacterAdded:Wait()
@@ -49,6 +55,8 @@ local function monitorPlayer()
             until character:FindFirstChild("HumanoidRootPart") and character:FindFirstChild("Humanoid")
 
             teleportToDeathPosition()
+
+            setWalkSpeed(26)
         end
     end
 end
@@ -60,5 +68,4 @@ task.spawn(function()
     end
 end)
 
--- Starte die Überwachung
 monitorPlayer()
