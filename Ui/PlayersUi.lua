@@ -419,7 +419,7 @@ Fly.BackgroundTransparency = 0.800000011920929
 Fly.BorderSizePixel = 0
 Fly.BorderColor3 = Color3.new(0, 0, 0)
 Fly.Transparency = 0.800000011920929
-Fly.Text = "Fly [PC:  E]"
+Fly.Text = "Fly [PC:-E]"
 Fly.TextColor3 = Color3.new(1, 1, 1)
 Fly.TextSize = 16
 Fly.TextTransparency = 0
@@ -797,8 +797,6 @@ print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
 print("-----------------------------------------------------")
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
-
 -- Im Working on It
 -- ~Julia
 
@@ -862,38 +860,29 @@ AntiPunch.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
-----------------------------------------------------------
-                    -- More Stuff
+local TPARMORY = script.Parent -- Falls das Skript direkt im Button ist
+
+if TPARMORY:IsA("TextButton") or TPARMORY:IsA("ImageButton") then
+    TPARMORY.MouseButton1Click:Connect(function()
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+
+        if humanoidRootPart then
+            humanoidRootPart.CFrame = CFrame.new(837.172058, 99.9899979, 2267.62744, 0.999993086, 3.25096372e-09, 0.00371100102, -3.43431616e-09, 1, 4.94014571e-08, -0.00371100102, -4.94138597e-08, 0.999993086)
+        else
+            warn("HumanoidRootPart nicht gefunden!")
+        end
+    end)
+else
+    warn("TPARMORY ist kein gültiger Button!")
+end
+
+
+
 -----------------------------------------------------------
 
-local targetWalkSpeed = 30
-local targetJumpPower = 55
-
-local player = game.Players.LocalPlayer
-
-local function updateCharacterProperties()
-    if player.Character and player.Character:FindFirstChild("Humanoid") then
-        local humanoid = player.Character.Humanoid
-        humanoid.WalkSpeed = targetWalkSpeed
-        humanoid.JumpPower = targetJumpPower
-    end
-end
-
-while true do
-    updateCharacterProperties()
-    wait(0.1)
-end
-
-
-
-
-
-
-
-
-
-
-
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
 
 
 
