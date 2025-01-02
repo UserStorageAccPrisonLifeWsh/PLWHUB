@@ -49,7 +49,7 @@ end
 local function onInputBegan(input, gameProcessed)
     if gameProcessed then return end
 
-    if input.KeyCode == Enum.KeyCode.F then
+    if input.KeyCode == Enum.KeyCode.E then
         toggleFly()
     elseif input.KeyCode == Enum.KeyCode.W then
         control.Forward = 1
