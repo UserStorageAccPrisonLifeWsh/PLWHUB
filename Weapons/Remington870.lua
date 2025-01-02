@@ -15,8 +15,3 @@ wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
 workspace.Tp:Destroy()
 
-weapon["Bullets"] = 4
-weapon["Damage"] = 60
-weapon["AutoFire"] = true
-weapon["FireRate"] = 0.2
-weapon["MaxAmmo"] = 900001
