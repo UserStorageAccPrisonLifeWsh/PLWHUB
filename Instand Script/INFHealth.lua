@@ -13,7 +13,7 @@ local function monitorAndReset()
                 wait(5.5)
             end
         end)
-
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/WalkAndJump.lua'),true))()
         humanoid.Died:Wait()
         print("")
         wait(1)
