@@ -860,29 +860,14 @@ AntiPunch.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
-local TPARMORY = script.Parent -- Falls das Skript direkt im Button ist
 
-if TPARMORY:IsA("TextButton") or TPARMORY:IsA("ImageButton") then
-    TPARMORY.MouseButton1Click:Connect(function()
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
 
-        if humanoidRootPart then
-            humanoidRootPart.CFrame = CFrame.new(837.172058, 99.9899979, 2267.62744, 0.999993086, 3.25096372e-09, 0.00371100102, -3.43431616e-09, 1, 4.94014571e-08, -0.00371100102, -4.94138597e-08, 0.999993086)
-        else
-            warn("HumanoidRootPart nicht gefunden!")
-        end
-    end)
-else
-    warn("TPARMORY ist kein gültiger Button!")
-end
 
 
 
 -----------------------------------------------------------
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
 
 
 
