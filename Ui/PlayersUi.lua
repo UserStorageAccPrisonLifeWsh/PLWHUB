@@ -791,6 +791,14 @@ print("Weshky Hub: MainUI Has Been Loaded!")
                     -- Buttons
 ----------------------------------------------------------
 
+
+print("Weshky Hub: Everything Has Been Loaded!")
+print("-----------------------------------------------------")
+print("Weshky Hub: Possible problems with Instant Scripts!")
+print("-----------------------------------------------------")
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
+
 -- Im Working on It
 -- ~Julia
 
@@ -853,13 +861,6 @@ end)
 AntiPunch.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
-
-print("Weshky Hub: Everything Has Been Loaded!")
-print("-----------------------------------------------------")
-print("Weshky Hub: Possible problems with Instant Scripts!")
-print("-----------------------------------------------------")
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
 
 ----------------------------------------------------------
                     -- More Stuff
