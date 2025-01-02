@@ -1,4 +1,5 @@
 local TpPart = Instance.new("Part", workspace)
+local weapon = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 TpPart.CanCollide = false;
 TpPart.Anchored = true;
 TpPart.Transparency = 1;
@@ -8,6 +9,15 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.7200
 wait(0.16)
 
 workspace.Remote.ItemHandler:InvokeServer(workspace["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP)
+
+wait(0.5)
+
+weapon["Bullets"] = 6
+weapon["Damage"] = 60
+weapon["AutoFire"] = true
+weapon["maxAmmos"] = 87
+weapon["FireRate"] = 0.25
+weapon["MaxAmmo"] = 900001
 
 wait(0.2)
 
