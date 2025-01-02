@@ -419,7 +419,7 @@ Fly.BackgroundTransparency = 0.800000011920929
 Fly.BorderSizePixel = 0
 Fly.BorderColor3 = Color3.new(0, 0, 0)
 Fly.Transparency = 0.800000011920929
-Fly.Text = "Fly [PC: F]"
+Fly.Text = "Fly [PC:-E]"
 Fly.TextColor3 = Color3.new(1, 1, 1)
 Fly.TextSize = 16
 Fly.TextTransparency = 0
@@ -866,7 +866,7 @@ end)
                     -- More Stuff
 -----------------------------------------------------------
 
-local targetWalkSpeed = 29
+local targetWalkSpeed = 30
 local targetJumpPower = 55
 
 local player = game.Players.LocalPlayer
