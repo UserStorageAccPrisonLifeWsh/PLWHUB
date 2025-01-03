@@ -441,6 +441,7 @@ ModRem870.Position = UDim2.new(0.018, 0, 0.697, 0)
 ModRem870.Size = UDim2.new(0, 200, 0, 30)
 ModRem870.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 ModRem870.BackgroundTransparency = 0.7
+ModRem870.BorderSizePixel = 0
 ModRem870.BorderColor3 = Color3.new(0, 0, 0)
 ModRem870.Transparency = 0.7
 ModRem870.Text = "Modding Remington 870"
