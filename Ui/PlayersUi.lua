@@ -248,26 +248,49 @@ UICorner2.Name = "UICorner"
 UICorner2.CornerRadius = UDim.new(0, 6)
 UICorner2.Parent = DeathPosi
 
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "MAINLABEL2"
-TextLabel.Position = UDim2.new(0.015, 0,0.209, 0)
-TextLabel.Size = UDim2.new(0, 417, 0, 52)
-TextLabel.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TextLabel.BackgroundTransparency = 0.6
-TextLabel.BorderSizePixel = 0
-TextLabel.BorderColor3 = Color3.new(0, 0, 0)
-TextLabel.Transparency = 0.6
-TextLabel.Text = "Main Scripts, Execute these scripts after Starting Whesky Hub:"
-TextLabel.TextColor3 = Color3.new(1, 1, 1)
-TextLabel.TextSize = 18
-TextLabel.TextTransparency = 0
-TextLabel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextLabel.Parent = Frame
+local MAINLABEL2 = Instance.new("TextLabel")
+MAINLABEL2.Name = "MAINLABEL2"
+MAINLABEL2.Position = UDim2.new(0.015, 0,0.209, 0)
+MAINLABEL2.Size = UDim2.new(0, 417, 0, 52)
+MAINLABEL2.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+MAINLABEL2.BackgroundTransparency = 0.6
+MAINLABEL2.BorderSizePixel = 0
+MAINLABEL2.BorderColor3 = Color3.new(0, 0, 0)
+MAINLABEL2.Transparency = 0.6
+MAINLABEL2.Text = "Main Scripts, Execute these scripts after Starting Whesky Hub:"
+MAINLABEL2.TextColor3 = Color3.new(1, 1, 1)
+MAINLABEL2.TextSize = 18
+MAINLABEL2.TextTransparency = 0
+MAINLABEL2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+MAINLABEL2.Parent = Frame
 
 local UICorner3 = Instance.new("UICorner")
 UICorner3.Name = "UICorner"
 UICorner3.CornerRadius = UDim.new(0, 6)
-UICorner3.Parent = TextLabel
+UICorner3.Parent = MAINLABEL2
+
+local ZFEUWEFHU = Instance.new("TextLabel")
+ZFEUWEFHU.Name = "ZFEUWEFHU"
+ZFEUWEFHU.Position = UDim2.new(0.001, 0,1.081, 0)
+ZFEUWEFHU.Size = UDim2.new(0, 944, 0, 31)
+ZFEUWEFHU.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+ZFEUWEFHU.BackgroundTransparency = 1
+ZFEUWEFHU.BorderSizePixel = 0
+ZFEUWEFHU.BorderColor3 = Color3.new(0, 0, 0)
+ZFEUWEFHU.Transparency = 1
+ZFEUWEFHU.TextTransparency = 1
+ZFEUWEFHU.Text = "Warning: Press 'Death Position' again after you Changed your Team!!"
+ZFEUWEFHU.TextColor3 = Color3.new(1, 1, 1)
+ZFEUWEFHU.TextSize = 18
+ZFEUWEFHU.TextColor3 = Color3.new(1, 0.34902, 0.34902)
+ZFEUWEFHU.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+ZFEUWEFHU.TextWrapped = true
+ZFEUWEFHU.Parent = Frame
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = ZFEUWEFHU
 
 ----------------------------------------------------------
                         -- Main UI
@@ -539,8 +562,6 @@ TaseAll.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum
 TaseAll.TextWrapped = true
 TaseAll.Parent = Extra
 
-Print("Tz")
-
 local JoinRed = Instance.new("TextButton")
 JoinRed.Name = "JoinRed"
 JoinRed.Position = UDim2.new(-0.001797, 0, -0.000468861, 0)
@@ -558,8 +579,6 @@ JoinRed.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum
 JoinRed.TextWrapped = true
 JoinRed.Parent = Extra
 
-print("Test34")
-
 local DontPunch = Instance.new("TextButton")
 DontPunch.Name = "Antipunch"
 DontPunch.Position = UDim2.new(-0.001797, 0, 0.62, 0)
@@ -569,15 +588,13 @@ DontPunch.BackgroundTransparency = 0.7
 DontPunch.BorderSizePixel = 0
 DontPunch.BorderColor3 = Color3.new(0, 0, 0)
 DontPunch.Transparency = 0.7
-DontPunch.Text = "Join Criminal"
+DontPunch.Text = "Antipunch"
 DontPunch.TextColor3 = Color3.new(1, 1, 1)
 DontPunch.TextSize = 16
 DontPunch.TextTransparency = 0
 DontPunch.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 DontPunch.TextWrapped = true
 DontPunch.Parent = Extra
-
-print("Test1")
 
 local KillAll = Instance.new("TextButton")
 KillAll.Name = "KillAll"
@@ -956,22 +973,22 @@ ModRem870.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Rem870Mod.lua'),true))()    
 end)
 
-AntiPunch.MouseButton1Down:connect(function()
+DontPunch.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
 
-
 ----------------------------------------------------------
-                    -- More Stuff
------------------------------------------------------------
+                    -- More:
+----------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
+DeathPosiB.MouseButton1Down:connect(function()
+    wait(0.1)
+    ZFEUWEFHU.Transparency = 0.4
+    ZFEUWEFHU.TextTransparency = 0
+    ZFEUWEFHU.BackgroundTransparency = 0.4
+    wait(6)
+    ZFEUWEFHU.Transparency = 1
+    ZFEUWEFHU.TextTransparency = 1
+    ZFEUWEFHU.BackgroundTransparency = 1
+end)
