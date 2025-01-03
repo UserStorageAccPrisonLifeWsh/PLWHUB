@@ -1065,43 +1065,16 @@ end)
 
 
 
-local HttpService = game:GetService('HttpService')
-local player = game.Players.LocalPlayer
+local playerName = game.Players.LocalPlayer.Name
 
--- Benutzerinformationen sammeln
-local username = player.Name
-local userId = player.UserId
-local avatarUrl = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. userId .. "&width=420&height=420&format=png"
-local currentDate = os.date("%Y-%m-%d %H:%M:%S") 
-
--- Webhook URL
-local webhookUrl = 'https://discord.com/api/webhooks/1324866782443343965/FyxFxkdZryGEtWSItPxWUomeSrlwCefwNvH-ujlm7doxWmCGj6WUoH9bYd-otEGGxBJz' 
-
--- Nachricht erstellen
-local messageData = {
-    content = "Someone Executed Weshky HubV1!", 
-    embeds = {{
-        title = "Player Information",
-        description = string.format("Username: **%s**\nUser ID: **%s**\nDate: **%s**", username, userId, currentDate),
-        color = 0x00FF00,  -- Grüne Farbe für das Embed
-        thumbnail = { url = avatarUrl }  -- Avatar als Thumbnail
-    }}
-}
-
--- HTTP-Anfrage zum Senden des Webhook
 local response = syn.request({
-    Url = webhookUrl,
+    Url = 'https://discord.com/api/webhooks/1324866782443343965/FyxFxkdZryGEtWSItPxWUomeSrlwCefwNvH-ujlm7doxWmCGj6WUoH9bYd-otEGGxBJz',  -- Replace with your Discord webhook URL
     Method = 'POST',
     Headers = {
         ['Content-Type'] = 'application/json' 
     },
-    Body = HttpService:JSONEncode(messageData)
+    Body = game:GetService('HttpService'):JSONEncode({
+        content = 'Someone Executed Weshky HubV1! Username: ' .. playerName
+    })
 })
-
--- Ausgabe, falls es Fehler gibt (optional)
-if response.StatusCode == 204 then
-    print("")
-else
-    print("W6" .. response.StatusCode)
-end
 
