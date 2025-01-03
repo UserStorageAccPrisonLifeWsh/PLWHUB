@@ -15,7 +15,7 @@ local Humanoid = Character:WaitForChild("Humanoid")
 
 -- Variables
 local flying = true
-local speed = 70
+local speed = 85
 local control = {Forward = 0, Backward = 0, Left = 0, Right = 0}
 
 -- Create body movers
