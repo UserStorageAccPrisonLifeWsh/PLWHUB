@@ -7,4 +7,4 @@ weapon["AutoFire"] = true
 weapon["maxAmmos"] = 87
 weapon["FireRate"] = 0.25
 weapon["MaxAmmo"] = 900001
-
+weapon["CurrentAmmo"] = 900001
