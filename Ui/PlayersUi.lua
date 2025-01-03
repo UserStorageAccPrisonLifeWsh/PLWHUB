@@ -225,7 +225,7 @@ DeathPosiB.BackgroundTransparency = 0.6
 DeathPosiB.BorderSizePixel = 0
 DeathPosiB.BorderColor3 = Color3.new(0, 0, 0)
 DeathPosiB.Transparency = 0.6
-DeathPosiB.Text = "Death Position (If you change team, press again!)"
+DeathPosiB.Text = "Death Position"
 DeathPosiB.TextColor3 = Color3.new(1, 1, 1)
 DeathPosiB.TextSize = 25
 DeathPosiB.TextTransparency = 0
@@ -362,38 +362,38 @@ GetM9.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.F
 GetM9.TextWrapped = true
 GetM9.Parent = MainParts
 
-local TPYARD = Instance.new("TextButton")
-TPYARD.Name = "ModM4A1"
-TPYARD.Position = UDim2.new(0.018, 0, 0.894, 0)
-TPYARD.Size = UDim2.new(0, 200, 0, 30)
-TPYARD.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TPYARD.BackgroundTransparency = 0.7
-TPYARD.BorderSizePixel = 0
-TPYARD.BorderColor3 = Color3.new(0, 0, 0)
-TPYARD.Transparency = 0.7
-TPYARD.Text = "Modding M4A1"
-TPYARD.TextColor3 = Color3.new(1, 1, 1)
-TPYARD.TextSize = 18
-TPYARD.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TPYARD.TextTransparency = 0
-TPYARD.Parent = MainParts
+local ModM4A1 = Instance.new("TextButton")
+ModM4A1.Name = "ModM4A1"
+ModM4A1.Position = UDim2.new(0.018, 0, 0.894, 0)
+ModM4A1.Size = UDim2.new(0, 200, 0, 30)
+ModM4A1.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+ModM4A1.BackgroundTransparency = 0.7
+ModM4A1.BorderSizePixel = 0
+ModM4A1.BorderColor3 = Color3.new(0, 0, 0)
+ModM4A1.Transparency = 0.7
+ModM4A1.Text = "Modding M4A1"
+ModM4A1.TextColor3 = Color3.new(1, 1, 1)
+ModM4A1.TextSize = 18
+ModM4A1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ModM4A1.TextTransparency = 0
+ModM4A1.Parent = MainParts
 
-local TPNEXUS = Instance.new("TextButton")
-TPNEXUS.Name = "ModAk"
-TPNEXUS.Position = UDim2.new(0.018, 0, 0.797, 0)
-TPNEXUS.Size = UDim2.new(0, 200, 0, 30)
-TPNEXUS.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TPNEXUS.BackgroundTransparency = 0.7
-TPNEXUS.BorderSizePixel = 0
-TPNEXUS.BorderColor3 = Color3.new(0, 0, 0)
-TPNEXUS.Transparency = 0.7
-TPNEXUS.Text = "Modding AK-47"
-TPNEXUS.TextColor3 = Color3.new(1, 1, 1)
-TPNEXUS.TextSize = 18
-TPNEXUS.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TPNEXUS.TextWrapped = true
-TPNEXUS.TextTransparency = 0
-TPNEXUS.Parent = MainParts
+local ModAK = Instance.new("TextButton")
+ModAK.Name = "ModAk"
+ModAK.Position = UDim2.new(0.018, 0, 0.797, 0)
+ModAK.Size = UDim2.new(0, 200, 0, 30)
+ModAK.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+ModAK.BackgroundTransparency = 0.7
+ModAK.BorderSizePixel = 0
+ModAK.BorderColor3 = Color3.new(0, 0, 0)
+ModAK.Transparency = 0.7
+ModAK.Text = "Modding AK-47"
+ModAK.TextColor3 = Color3.new(1, 1, 1)
+ModAK.TextSize = 18
+ModAK.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ModAK.TextWrapped = true
+ModAK.TextTransparency = 0
+ModAK.Parent = MainParts
 
 local TPPRISON = Instance.new("TextLabel")
 TPPRISON.Name = "TextInfoMod"
@@ -412,21 +412,20 @@ TPPRISON.TextWrapped = true
 TPPRISON.TextTransparency = 0
 TPPRISON.Parent = MainParts
 
-local TPARMORY = Instance.new("TextButton")
-TPARMORY.Name = "ModRem870"
-TPARMORY.Position = UDim2.new(0.018, 0, 0.697, 0)
-TPARMORY.Size = UDim2.new(0, 200, 0, 30)
-TPARMORY.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TPARMORY.BackgroundTransparency = 0.7
-TPARMORY.BorderSizePixel = 0
-TPARMORY.BorderColor3 = Color3.new(0, 0, 0)
-TPARMORY.Transparency = 0.7
-TPARMORY.Text = "Modding Remington 870"
-TPARMORY.TextColor3 = Color3.new(1, 1, 1)
-TPARMORY.TextSize = 18
-TPARMORY.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TPARMORY.TextTransparency = 0
-TPARMORY.Parent = MainParts
+local ModRem870 = Instance.new("TextButton")
+ModRem870.Name = "ModRem870"
+ModRem870.Position = UDim2.new(0.018, 0, 0.697, 0)
+ModRem870.Size = UDim2.new(0, 200, 0, 30)
+ModRem870.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+ModRem870.BackgroundTransparency = 0.7
+ModRem870.BorderColor3 = Color3.new(0, 0, 0)
+ModRem870.Transparency = 0.7
+ModRem870.Text = "Modding Remington 870"
+ModRem870.TextColor3 = Color3.new(1, 1, 1)
+ModRem870.TextSize = 18
+ModRem870.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ModRem870.TextTransparency = 0
+ModRem870.Parent = MainParts
 
 
 local DexExploder = Instance.new("TextButton")
@@ -939,10 +938,23 @@ DeathPosiB.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
 end)
 
+ModAK.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+ModM4A1.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+ModRem870.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+
+
 ----------------------------------------------------------
                     -- More Stuff
 -----------------------------------------------------------
-
 
 
 
