@@ -556,15 +556,15 @@ JoinRed.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum
 JoinRed.TextWrapped = true
 JoinRed.Parent = Extra
 
-local CarFly = Instance.new("TextButton")
-CarFly.Name = "Antipunch"
-CarFly.Position = UDim2.new(-0.001797, 0, 0.62, 0)
-CarFly.Size = UDim2.new(0, 93, 0, 32)
-CarFly.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-CarFly.BackgroundTransparency = 0.7
-CarFly.BorderSizePixel = 0
-CarFly.BorderColor3 = Color3.new(0, 0, 0)
-CarFly.Transparency = 0.7
+local Antipunch = Instance.new("TextButton")
+Antipunch.Name = "Antipunch"
+Antipunch.Position = UDim2.new(-0.001797, 0, 0.62, 0)
+Antipunch.Size = UDim2.new(0, 93, 0, 32)
+Antipunch.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+Antipunch.BackgroundTransparency = 0.7
+Antipunch.BorderSizePixel = 0
+Antipunch.BorderColor3 = Color3.new(0, 0, 0)
+Antipunch.Transparency = 0.7
 CarFly.Text = "Antipunch"
 CarFly.TextColor3 = Color3.new(1, 1, 1)
 CarFly.TextSize = 16
@@ -939,15 +939,19 @@ DeathPosiB.MouseButton1Down:connect(function()
 end)
 
 ModAK.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet((''),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AKMod.lua'),true))()    
 end)
 
 ModM4A1.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet((''),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/M4A1Mod.lua'),true))()    
 end)
 
 ModRem870.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet((''),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Rem870Mod.lua'),true))()    
+end)
+
+AntiPunch.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
 
