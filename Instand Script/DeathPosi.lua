@@ -5,17 +5,18 @@ local part = nil
 
 local function createPart()
     part = Instance.new("Part")
-    part.Size = Vector3.new(0.5, 0.5, 0.5)
-    part.BrickColor = BrickColor.Random()
+    part.Size = Vector3.new(1, 1, 1)
+    part.BrickColor = BrickColor.new("Bright red")
     part.Anchored = true
     part.CanCollide = false
     part.Parent = workspace
+    part.Transparency = 0.95 
 
     if character and character:FindFirstChild("HumanoidRootPart") then
         part.Position = character.HumanoidRootPart.Position + Vector3.new(0, 5, 0)
     end
 
-    task.delay(0.8, function()
+    task.delay(1.25, function()
         if part then
             part:Destroy()
         end
@@ -64,7 +65,7 @@ end
 task.spawn(function()
     while true do
         createPart()
-        task.wait(0.15)
+        task.wait(1)
     end
 end)
 
