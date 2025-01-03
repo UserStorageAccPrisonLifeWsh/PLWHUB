@@ -539,6 +539,8 @@ TaseAll.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum
 TaseAll.TextWrapped = true
 TaseAll.Parent = Extra
 
+Print("Tz")
+
 local JoinRed = Instance.new("TextButton")
 JoinRed.Name = "JoinRed"
 JoinRed.Position = UDim2.new(-0.001797, 0, -0.000468861, 0)
@@ -556,6 +558,8 @@ JoinRed.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum
 JoinRed.TextWrapped = true
 JoinRed.Parent = Extra
 
+print("Test34")
+
 local DontPunch = Instance.new("TextButton")
 DontPunch.Name = "Antipunch"
 DontPunch.Position = UDim2.new(-0.001797, 0, 0.62, 0)
@@ -572,6 +576,8 @@ DontPunch.TextTransparency = 0
 DontPunch.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 DontPunch.TextWrapped = true
 DontPunch.Parent = Extra
+
+print("Test1")
 
 local KillAll = Instance.new("TextButton")
 KillAll.Name = "KillAll"
