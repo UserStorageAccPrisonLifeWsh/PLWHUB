@@ -6,4 +6,5 @@ weapon["Damage"] = 45
 weapon["AutoFire"] = true
 weapon["FireRate"] = 0.07
 weapon["MaxAmmo"] = 900001
+weapon["CurrentAmmo"] = 900001
 
