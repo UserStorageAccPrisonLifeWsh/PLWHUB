@@ -6,8 +6,8 @@ local part = nil
 local function createPart()
     part = Instance.new("Part")
     part.Size = Vector3.new(2, 2, 2)
-    part.Transparency = 0.9
-    part.BrickColor = BrickColor.Red()
+    part.Transparency = 0
+    part.BrickColor = BrickColor.Random()
     part.Anchored = true
     part.CanCollide = false
     part.Parent = workspace
