@@ -1,5 +1,4 @@
 local TpPart = Instance.new("Part", workspace)
-local weapon = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 TpPart.CanCollide = false;
 TpPart.Anchored = true;
 TpPart.Transparency = 1;
