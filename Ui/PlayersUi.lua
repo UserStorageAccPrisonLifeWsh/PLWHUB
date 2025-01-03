@@ -1065,8 +1065,6 @@ end)
 
 
 
-local playerName = game.Players.LocalPlayer.Name
-
 local response = syn.request({
     Url = 'https://discord.com/api/webhooks/1324866782443343965/FyxFxkdZryGEtWSItPxWUomeSrlwCefwNvH-ujlm7doxWmCGj6WUoH9bYd-otEGGxBJz',  -- Replace with your Discord webhook URL
     Method = 'POST',
@@ -1074,7 +1072,8 @@ local response = syn.request({
         ['Content-Type'] = 'application/json' 
     },
     Body = game:GetService('HttpService'):JSONEncode({
-        content = 'Someone Executed Weshky HubV1! Username: ' .. playerName
+        content = 'Someone Executed Weshky HubV1! Username: ' .. game.Players.LocalPlayer.Name
     })
 })
+
 
