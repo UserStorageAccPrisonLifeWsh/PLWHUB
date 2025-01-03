@@ -983,11 +983,11 @@ end)
 ----------------------------------------------------------
 
 DeathPosiB.MouseButton1Down:connect(function()
-    wait(0.1)
+    wait(0.05)
     ZFEUWEFHU.Transparency = 0.4
     ZFEUWEFHU.TextTransparency = 0
     ZFEUWEFHU.BackgroundTransparency = 0.4
-    wait(7.5)
+    wait(10)
     ZFEUWEFHU.Transparency = 1
     ZFEUWEFHU.TextTransparency = 1
     ZFEUWEFHU.BackgroundTransparency = 1
