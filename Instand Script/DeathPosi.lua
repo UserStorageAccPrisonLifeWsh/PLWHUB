@@ -5,7 +5,7 @@ local part = nil
 
 local function createPart()
     part = Instance.new("Part")
-    part.Size = Vector3.new(2, 2, 2)
+    part.Size = Vector3.new(0.5, 0.5, 0.5)
     part.BrickColor = BrickColor.Random()
     part.Anchored = true
     part.CanCollide = false
