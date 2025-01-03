@@ -216,21 +216,21 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = Frame
 
-local TextButton = Instance.new("TextButton")
-TextButton.Name = "DeathPosi"
-TextButton.Position = UDim2.new(0.696, 0,0.209, 0)
-TextButton.Size = UDim2.new(0, 271, 0, 52)
-TextButton.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TextButton.BackgroundTransparency = 0.6
-TextButton.BorderSizePixel = 0
-TextButton.BorderColor3 = Color3.new(0, 0, 0)
-TextButton.Transparency = 0.6
-TextButton.Text = "Death Position"
-TextButton.TextColor3 = Color3.new(1, 1, 1)
-TextButton.TextSize = 25
-TextButton.TextTransparency = 0
-TextButton.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton.Parent = Frame
+local DeathPosiB = Instance.new("TextButton")
+DeathPosiB.Name = "DeathPosi"
+DeathPosiB.Position = UDim2.new(0.696, 0,0.209, 0)
+DeathPosiB.Size = UDim2.new(0, 271, 0, 52)
+DeathPosiB.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+DeathPosiB.BackgroundTransparency = 0.6
+DeathPosiB.BorderSizePixel = 0
+DeathPosiB.BorderColor3 = Color3.new(0, 0, 0)
+DeathPosiB.Transparency = 0.6
+DeathPosiB.Text = "Death Position"
+DeathPosiB.TextColor3 = Color3.new(1, 1, 1)
+DeathPosiB.TextSize = 25
+DeathPosiB.TextTransparency = 0
+DeathPosiB.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DeathPosiB.Parent = Frame
 
 local Frame232 = Instance.new("Frame")
 Frame232.Name = "Frame233"
@@ -935,17 +935,13 @@ TaseAll.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua'),true))()    
 end)
 
-AntiPunch.MouseButton1Down:connect(function()
+DeathPosiB.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
 ----------------------------------------------------------
                     -- More Stuff
 -----------------------------------------------------------
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/INFHealth.lua'),true))()
-
-
 
 
 
