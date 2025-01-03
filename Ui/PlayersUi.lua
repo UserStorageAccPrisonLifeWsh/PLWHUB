@@ -9,7 +9,7 @@
 -- 29.12.2024
 
 print("-----------------------------------------------------")
-print("Thanks for using Weshky Hub, you can check out the Discord 50 Members = Update!")
+print("Thanks for using Weshky Hub, you can check out the Discord 25 Members = Update!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
 
