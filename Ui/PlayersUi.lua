@@ -992,3 +992,72 @@ DeathPosiB.MouseButton1Down:connect(function()
     ZFEUWEFHU.TextTransparency = 1
     ZFEUWEFHU.BackgroundTransparency = 1
 end)
+
+
+-----------------------------------------------
+
+local OpenClose = Instance.new("TextButton")
+OpenClose.Name = "OpenClose"
+OpenClose.Position = UDim2.new(0.0177638, 0, 0.469438, 0)
+OpenClose.Size = UDim2.new(0, 200, 0, 50)
+OpenClose.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+OpenClose.BackgroundTransparency = 0.4
+OpenClose.BorderSizePixel = 0
+OpenClose.BorderColor3 = Color3.new(0, 0, 0)
+OpenClose.Transparency = 0.4
+OpenClose.Text = "Open/ Close Weshky Hub"
+OpenClose.TextColor3 = Color3.new(1, 1, 1)
+OpenClose.TextSize = 20
+OpenClose.TextTransparency = 0
+OpenClose.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+OpenClose.Parent = WHub2
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+
+UICorner.Parent = OpenClose
+
+
+local player = game.Players.LocalPlayer
+local playerGui = WHub2
+local Main = Main
+local OpenClose = OpenClose
+
+local function toggleVisibility()
+    Main.Visible = not Main.Visible 
+end
+
+
+OpenClose.MouseButton1Down:Connect(function()
+    toggleVisibility() 
+end)
+
+
+local player = game.Players.LocalPlayer
+local playerGui = WHub2
+local Main = Frame
+local OpenClose = OpenClose
+
+local function toggleVisibility()
+    Main.Visible = not Main.Visible 
+end
+
+OpenClose.MouseButton1Down:Connect(function()
+    toggleVisibility()
+end)
+
+
+
+local player = game.Players.LocalPlayer
+local playerGui = WHub2
+local Main = SpecificPlayers
+local OpenClose = OpenClose
+
+local function toggleVisibility()
+    Main.Visible = not Main.Visible
+end
+
+OpenClose.MouseButton1Down:Connect(function()
+    toggleVisibility() 
+end)
+
