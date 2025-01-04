@@ -1,41 +1,3 @@
-local Kill = Instance.new("ScreenGui")
-Kill.Name = "Kill"
-Kill.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Kill.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-local HAUPT = Instance.new("Frame")
-HAUPT.Name = "HAUPT"
-HAUPT.Position = UDim2.new(0.559561, 0, 0.207197, 0)
-HAUPT.Size = UDim2.new(0, 314, 0, 105)
-HAUPT.BackgroundColor3 = Color3.new(0, 0, 0)
-HAUPT.BackgroundTransparency = 0.5
-HAUPT.BorderSizePixel = 0
-HAUPT.BorderColor3 = Color3.new(0, 0, 0)
-HAUPT.Transparency = 0.5
-HAUPT.Parent = Kill
-
-local player = Instance.new("TextBox")
-player.Name = "player"
-player.Position = UDim2.new(0.181399, 0, 0.255949, 0)
-player.Size = UDim2.new(0, 200, 0, 50)
-player.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-player.BackgroundTransparency = 0.20000000298023224
-player.BorderSizePixel = 0
-player.BorderColor3 = Color3.new(0, 0, 0)
-player.Transparency = 0.20000000298023224
-player.Text = "<PlayerName>"
-player.TextColor3 = Color3.new(0, 0, 0)
-player.TextSize = 14
-player.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-player.Parent = HAUPT
-
-local UICorner = Instance.new("UICorner")
-UICorner.Name = "UICorner"
-
-UICorner.Parent = HAUPT
-
-
-
 getgenv().AutoClick = false
 getgenv().AutoUpgrade = false
 getgenv().AutoEgg = false
@@ -560,4 +522,6 @@ function bring(player,pos,Type,Extra)
 			return
 		end
 	end
+
+
 tase_all()
