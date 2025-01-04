@@ -325,7 +325,7 @@ DeathPosiB.Text = "Death Position"
 DeathPosiB.TextColor3 = Color3.new(1, 1, 1)
 DeathPosiB.TextSize = 25
 DeathPosiB.TextTransparency = 0
-DeathPosiB.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DeathPosiB.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 DeathPosiB.Parent = Frame
 
 local Frame232 = Instance.new("Frame")
@@ -357,7 +357,7 @@ MAINLABEL2.Text = "Main Scripts, Execute these scripts after Starting Whesky Hub
 MAINLABEL2.TextColor3 = Color3.new(1, 1, 1)
 MAINLABEL2.TextSize = 18
 MAINLABEL2.TextTransparency = 0
-MAINLABEL2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+MAINLABEL2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 MAINLABEL2.Parent = Frame
 
 local UICorner3 = Instance.new("UICorner")
@@ -1095,14 +1095,14 @@ end)
 
 local OpenClose = Instance.new("TextButton")
 OpenClose.Name = "OpenClose"
-OpenClose.Position = UDim2.new(0.0177638, 0, 0.469438, 0)
-OpenClose.Size = UDim2.new(0, 200, 0, 50)
+OpenClose.Position = UDim2.new(0.022, 0,0.358, 0)
+OpenClose.Size = UDim2.new(0, 255,0, 50)
 OpenClose.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
 OpenClose.BackgroundTransparency = 0.4
 OpenClose.BorderSizePixel = 0
 OpenClose.BorderColor3 = Color3.new(0, 0, 0)
 OpenClose.Transparency = 0.4
-OpenClose.Text = "Open/ Close Weshky Hub"
+OpenClose.Text = "Open/ Close Weshky Hub| Key: U"
 OpenClose.TextColor3 = Color3.new(1, 1, 1)
 OpenClose.TextSize = 20
 OpenClose.TextTransparency = 0
@@ -1121,29 +1121,40 @@ local Main = Main
 local OpenClose = OpenClose
 
 local function toggleVisibility()
-    Main.Visible = not Main.Visible 
+    Main.Visible = not Main.Visible
 end
 
-
+-- Mausbutton-Click-Event
 OpenClose.MouseButton1Down:Connect(function()
-    toggleVisibility() 
+    toggleVisibility()
 end)
 
+-- Überwachen der 'U'-Taste
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
+        toggleVisibility()  -- Sichtbarkeit umschalten, wenn 'U' gedrückt wird
+    end
+end)
 
+-- Wiederholung für alle anderen Interfaces
 local player = game.Players.LocalPlayer
 local playerGui = WHub2
 local Main = Frame
 local OpenClose = OpenClose
 
 local function toggleVisibility()
-    Main.Visible = not Main.Visible 
+    Main.Visible = not Main.Visible
 end
 
 OpenClose.MouseButton1Down:Connect(function()
     toggleVisibility()
 end)
 
-
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
+        toggleVisibility() 
+    end
+end)
 
 local player = game.Players.LocalPlayer
 local playerGui = WHub2
@@ -1155,9 +1166,14 @@ local function toggleVisibility()
 end
 
 OpenClose.MouseButton1Down:Connect(function()
-    toggleVisibility() 
+    toggleVisibility()
 end)
 
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
+        toggleVisibility() 
+    end
+end)
 
 
 
