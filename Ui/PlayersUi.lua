@@ -54,7 +54,7 @@ Tp.Parent = SpecificPlayers
 
 local Tase = Instance.new("TextLabel")
 Tase.Name = "Tase"
-Tase.Position = UDim2.new(0.0509676, 0, 0.320514, 0)
+Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
 Tase.Size = UDim2.new(0, 120, 0, 36)
 Tase.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Tase.BackgroundTransparency = 0.6
@@ -101,7 +101,7 @@ end)
 
 local TaseUser = Instance.new("TextBox")
 TaseUser.Name = "TaseUser"
-TaseUser.Position = UDim2.new(0.517879, 0, 0.320514, 0)
+TaseUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
 TaseUser.Size = UDim2.new(0, 122, 0, 35)
 TaseUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 TaseUser.BackgroundTransparency = 0.6
@@ -118,7 +118,7 @@ TaseUser.Parent = SpecificPlayers
 
 local Kill = Instance.new("TextLabel")
 Kill.Name = "Kill"
-Kill.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
+Kill.Position = UDim2.new(0.0509676, 0, 0.320514, 0)
 Kill.Size = UDim2.new(0, 120, 0, 36)
 Kill.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Kill.BackgroundTransparency = 0.6
@@ -134,20 +134,36 @@ Kill.Parent = SpecificPlayers
 
 local KillUser = Instance.new("TextBox")
 KillUser.Name = "KillUser"
-KillUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
+KillUser.Position = UDim2.new(0.517879, 0, 0.320514, 0)
 KillUser.Size = UDim2.new(0, 122, 0, 35)
 KillUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 KillUser.BackgroundTransparency = 0.6
 KillUser.BorderSizePixel = 0
 KillUser.BorderColor3 = Color3.new(0, 0, 0)
 KillUser.Transparency = 0.6
-KillUser.Text = "Soon!!"
+KillUser.Text = "<Username>"
 KillUser.TextColor3 = Color3.new(1, 1, 1)
 KillUser.TextSize = 15
 KillUser.TextTransparency = 0
 KillUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 KillUser.TextWrapped = true
 KillUser.Parent = SpecificPlayers
+KillUser.FocusLost:connect(function(enterPressed)
+    if enterPressed then
+        targetPlayerName = target.Text
+        local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
+        if targetPlayer and targetPlayer.Character then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+            wait(0.2)
+            for i = 1, 14 do
+                game:GetService("ReplicatedStorage").meleeEvent:FireServer(targetPlayer)
+            end
+        else
+            print("Weshky Hub: Player Not Found!!")
+        end
+    end
+end)
+
 
 local TSMain = Instance.new("Frame")
 TSMain.Name = "TSMain"
