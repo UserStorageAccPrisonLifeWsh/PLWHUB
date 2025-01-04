@@ -5,7 +5,7 @@ local tool = character:FindFirstChild("Remington 870")
 if tool and tool:FindFirstChild("GunStates") then
     local weapon = require(tool.GunStates)
 
-    weapon["Bullets"] = 6
+    weapon["Bullets"] = 12
     weapon["Damage"] = 60
     weapon["AutoFire"] = true
     weapon["maxAmmos"] = 87
