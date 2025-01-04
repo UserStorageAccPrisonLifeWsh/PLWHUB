@@ -560,4 +560,4 @@ function bring(player,pos,Type,Extra)
 			return
 		end
 	end
-
+tase_all
