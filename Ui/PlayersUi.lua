@@ -75,7 +75,7 @@ Teleport.Size = UDim2.new(0, 122, 0, 35)
 Teleport.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Teleport.BackgroundTransparency = 0.6
 Teleport.BorderSizePixel = 0
-Teleport.Text = "<Username>"
+Teleport.Text = "<Full-Username>"
 Teleport.TextColor3 = Color3.new(1, 1, 1)
 Teleport.TextSize = 15
 Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -88,6 +88,7 @@ local function teleportToPlayer(playerName)
 
     if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
         localPlayer.Character:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
+        Teleport.Text = "<Full-Username>"
     else
         warn("Wehsky Hub: Player Not Found: " .. playerName)
     end
@@ -141,7 +142,7 @@ KillUser.BackgroundTransparency = 0.6
 KillUser.BorderSizePixel = 0
 KillUser.BorderColor3 = Color3.new(0, 0, 0)
 KillUser.Transparency = 0.6
-KillUser.Text = "<Username>"
+KillUser.Text = "<Full-Username>"
 KillUser.TextColor3 = Color3.new(1, 1, 1)
 KillUser.TextSize = 15
 KillUser.TextTransparency = 0
@@ -169,6 +170,7 @@ KillUser.FocusLost:connect(function(enterPressed)
             end
 
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+            KillUser.Text = "<Full-Username>"
 
             teleportPart:Destroy()
         else
