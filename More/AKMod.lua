@@ -8,7 +8,7 @@ if tool and tool:FindFirstChild("GunStates") then
     weapon["Bullets"] = 3
     weapon["Damage"] = 45
     weapon["AutoFire"] = true
-    weapon["FireRate"] = 0.07
+    weapon["FireRate"] = 0.1
     weapon["MaxAmmo"] = 900001
     weapon["CurrentAmmo"] = 900001
 end
