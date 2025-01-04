@@ -175,6 +175,7 @@ ArrestUser.FocusLost:connect(function(enterPressed)
         else
             print("Whesky Hub: Player Not Found!!")
             ArrestUser.Text = "<Username>"
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
         end
     end
 end)
@@ -233,7 +234,6 @@ KillUser.FocusLost:connect(function(enterPressed)
 
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
             KillUser.Text = "<Username>"
-
             teleportPart:Destroy()
         else
             print("Weshky Hub: Player Not Found!!")
@@ -323,7 +323,7 @@ DeathPosiB.BorderColor3 = Color3.new(0, 0, 0)
 DeathPosiB.Transparency = 0.6
 DeathPosiB.Text = "Death Position"
 DeathPosiB.TextColor3 = Color3.new(1, 1, 1)
-DeathPosiB.TextSize = 25
+DeathPosiB.TextSize = 24
 DeathPosiB.TextTransparency = 0
 DeathPosiB.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 DeathPosiB.Parent = Frame
@@ -355,7 +355,7 @@ MAINLABEL2.BorderColor3 = Color3.new(0, 0, 0)
 MAINLABEL2.Transparency = 0.6
 MAINLABEL2.Text = "Main Scripts, Execute these scripts after Starting Whesky Hub:"
 MAINLABEL2.TextColor3 = Color3.new(1, 1, 1)
-MAINLABEL2.TextSize = 18
+MAINLABEL2.TextSize = 17
 MAINLABEL2.TextTransparency = 0
 MAINLABEL2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 MAINLABEL2.Parent = Frame
@@ -999,7 +999,7 @@ print("-----------------------------------------------------")
 -- ~Julia
 
 GetAK_47.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua'),true))()
 end)
 
 GetM4A1.MouseButton1Down:connect(function()
@@ -1023,7 +1023,9 @@ DexExploder.MouseButton1Down:connect(function()
 end)
 
 JoinRed.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()
+    wait(3)
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
 end)
 
 ArrestEveryone.MouseButton1Down:connect(function()
@@ -1055,7 +1057,7 @@ TaseAll.MouseButton1Down:connect(function()
 end)
 
 DeathPosiB.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
 end)
 
 ModAK.MouseButton1Down:connect(function()
@@ -1102,7 +1104,7 @@ OpenClose.BackgroundTransparency = 0.4
 OpenClose.BorderSizePixel = 0
 OpenClose.BorderColor3 = Color3.new(0, 0, 0)
 OpenClose.Transparency = 0.4
-OpenClose.Text = "Open/ Close Weshky Hub| Key: U"
+OpenClose.Text = "Open Weshky Hub| Key: U"
 OpenClose.TextColor3 = Color3.new(1, 1, 1)
 OpenClose.TextSize = 20
 OpenClose.TextTransparency = 0
@@ -1124,19 +1126,16 @@ local function toggleVisibility()
     Main.Visible = not Main.Visible
 end
 
--- Mausbutton-Click-Event
 OpenClose.MouseButton1Down:Connect(function()
     toggleVisibility()
 end)
 
--- Überwachen der 'U'-Taste
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
-        toggleVisibility()  -- Sichtbarkeit umschalten, wenn 'U' gedrückt wird
+        toggleVisibility() 
     end
 end)
 
--- Wiederholung für alle anderen Interfaces
 local player = game.Players.LocalPlayer
 local playerGui = WHub2
 local Main = Frame
@@ -1174,7 +1173,4 @@ game:GetService("UserInputService").InputBegan:Connect(function(input, gameProce
         toggleVisibility() 
     end
 end)
-
-
-
 
