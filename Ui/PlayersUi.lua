@@ -14,6 +14,9 @@ print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
 
 local UIS = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
 
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
@@ -52,21 +55,21 @@ Tp.TextTransparency = 0
 Tp.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 Tp.Parent = SpecificPlayers
 
--- local Tase = Instance.new("TextLabel")
--- Tase.Name = "Tase"
--- Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
--- Tase.Size = UDim2.new(0, 120, 0, 36)
--- Tase.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
--- Tase.BackgroundTransparency = 0.6
--- Tase.BorderSizePixel = 0
--- Tase.BorderColor3 = Color3.new(0, 0, 0)
--- Tase.Transparency = 0.6
--- Tase.Text = "Tase Player:"
--- Tase.TextColor3 = Color3.new(1, 1, 1)
--- Tase.TextSize = 15
--- Tase.TextTransparency = 0
--- Tase.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
--- Tase.Parent = SpecificPlayers
+local Tase = Instance.new("TextLabel")
+Tase.Name = "Tase"
+Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
+Tase.Size = UDim2.new(0, 120, 0, 36)
+Tase.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+Tase.BackgroundTransparency = 0.6
+Tase.BorderSizePixel = 0
+Tase.BorderColor3 = Color3.new(0, 0, 0)
+Tase.Transparency = 0.6
+Tase.Text = "Arrest Player:"
+Tase.TextColor3 = Color3.new(1, 1, 1)
+Tase.TextSize = 15
+Tase.TextTransparency = 0
+Tase.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Tase.Parent = SpecificPlayers
 
 local Teleport = Instance.new("TextBox")
 Teleport.Name = "Teleport"
@@ -75,7 +78,7 @@ Teleport.Size = UDim2.new(0, 122, 0, 35)
 Teleport.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Teleport.BackgroundTransparency = 0.6
 Teleport.BorderSizePixel = 0
-Teleport.Text = "<Full-Username>"
+Teleport.Text = "<Username, Press Enter>"
 Teleport.TextColor3 = Color3.new(1, 1, 1)
 Teleport.TextSize = 15
 Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -88,9 +91,10 @@ local function teleportToPlayer(playerName)
 
     if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
         localPlayer.Character:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
-        Teleport.Text = "<Full-Username>"
+        Teleport.Text = "<Username>"
     else
-        warn("Wehsky Hub: Player Not Found: " .. playerName)
+        print("Wehsky Hub: Player Not Found: " .. playerName)
+        Teleport.Text = "<Username>"
     end
 end
 
@@ -100,22 +104,80 @@ Teleport.FocusLost:Connect(function(enterPressed)
     end
 end)
 
--- local TaseUser = Instance.new("TextBox")
--- TaseUser.Name = "TaseUser"
--- TaseUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
--- TaseUser.Size = UDim2.new(0, 122, 0, 35)
--- TaseUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
--- TaseUser.BackgroundTransparency = 0.6
--- TaseUser.BorderSizePixel = 0
--- TaseUser.BorderColor3 = Color3.new(0, 0, 0)
--- TaseUser.Transparency = 0.6
--- TaseUser.Text = "Soon!!"
--- TaseUser.TextColor3 = Color3.new(1, 1, 1)
--- TaseUser.TextSize = 15
--- TaseUser.TextTransparency = 0
--- TaseUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
--- TaseUser.TextWrapped = true
--- TaseUser.Parent = SpecificPlayers
+local ArrestUser = Instance.new("TextBox")
+ArrestUser.Name = "ArrestUser"
+ArrestUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
+ArrestUser.Size = UDim2.new(0, 122, 0, 35)
+ArrestUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+ArrestUser.BackgroundTransparency = 0.6
+ArrestUser.BorderSizePixel = 0
+ArrestUser.BorderColor3 = Color3.new(0, 0, 0)
+ArrestUser.Transparency = 0.6
+ArrestUser.Text = "<Username, Press Enter>"
+ArrestUser.TextColor3 = Color3.new(1, 1, 1)
+ArrestUser.TextSize = 15
+ArrestUser.TextTransparency = 0
+ArrestUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+ArrestUser.TextWrapped = true
+ArrestUser.Parent = SpecificPlayers
+
+ArrestUser.FocusLost:connect(function(enterPressed) 
+    if enterPressed then 
+        local targetPlayerName = ArrestUser.Text 
+        local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
+        if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            print("Whesky Hub: Player found:", targetPlayerName)
+
+            local localPlayer = game.Players.LocalPlayer
+            local humanoidRootPart = localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if not humanoidRootPart then
+                wait(0.0001)
+                return
+            end
+
+            local returnPart = Instance.new("Part")
+            returnPart.Parent = workspace
+            returnPart.CFrame = humanoidRootPart.CFrame
+            returnPart.Anchored = true
+            returnPart.Transparency = 1
+            returnPart.BrickColor = BrickColor.new("Bright yellow")
+            returnPart.Size = Vector3.new(2, 0.5, 2) 
+            returnPart.CanCollide = false
+
+            local character = targetPlayer.Character
+            local targetHRP = character and character:FindFirstChild("HumanoidRootPart")
+            
+            if targetHRP and targetPlayer.Character:FindFirstChild("Humanoid") then
+                local humanoid = character.Humanoid
+                if humanoid.SeatPart then
+                    repeat
+                        wait(0.5)
+                    until not humanoid.SeatPart
+                end
+            end
+
+            humanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+            wait(0.2)
+
+            local i = 0
+            repeat
+                wait()
+                humanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+                game.Workspace.Remote.arrest:InvokeServer(targetPlayer.Character.HumanoidRootPart)
+                i = i + 1
+            until i == 5
+
+            wait(0.5)
+            humanoidRootPart.CFrame = returnPart.CFrame
+            returnPart:Destroy()
+            Arrest.Text = "<Username>"
+
+        else
+            print("Whesky Hub: Player Not Found!!")
+            ArrestUser.Text = "<Username>"
+        end
+    end
+end)
 
 local Kill = Instance.new("TextLabel")
 Kill.Name = "Kill"
@@ -142,7 +204,7 @@ KillUser.BackgroundTransparency = 0.6
 KillUser.BorderSizePixel = 0
 KillUser.BorderColor3 = Color3.new(0, 0, 0)
 KillUser.Transparency = 0.6
-KillUser.Text = "<Full-Username>"
+KillUser.Text = "<Username, Press Enter>"
 KillUser.TextColor3 = Color3.new(1, 1, 1)
 KillUser.TextSize = 15
 KillUser.TextTransparency = 0
@@ -170,11 +232,12 @@ KillUser.FocusLost:connect(function(enterPressed)
             end
 
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
-            KillUser.Text = "<Full-Username>"
+            KillUser.Text = "<Username>"
 
             teleportPart:Destroy()
         else
             print("Weshky Hub: Player Not Found!!")
+            KillUser.Text = "<Username>"
         end
     end
 end)
@@ -1043,7 +1106,7 @@ OpenClose.Text = "Open/ Close Weshky Hub"
 OpenClose.TextColor3 = Color3.new(1, 1, 1)
 OpenClose.TextSize = 20
 OpenClose.TextTransparency = 0
-OpenClose.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+OpenClose.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 OpenClose.Parent = WHub2
 
 local UICorner = Instance.new("UICorner")
@@ -1094,7 +1157,6 @@ end
 OpenClose.MouseButton1Down:Connect(function()
     toggleVisibility() 
 end)
-
 
 
 
