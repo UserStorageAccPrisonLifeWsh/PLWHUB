@@ -10,7 +10,7 @@ local function createPart()
     part.Anchored = true
     part.CanCollide = false
     part.Parent = workspace
-    part.Transparency = 0.8
+    part.Transparency = 1
 
     if character and character:FindFirstChild("HumanoidRootPart") then
         part.Position = character.HumanoidRootPart.Position + Vector3.new(0, 5, 0)
