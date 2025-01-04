@@ -52,21 +52,21 @@ Tp.TextTransparency = 0
 Tp.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 Tp.Parent = SpecificPlayers
 
-local Tase = Instance.new("TextLabel")
-Tase.Name = "Tase"
-Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
-Tase.Size = UDim2.new(0, 120, 0, 36)
-Tase.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-Tase.BackgroundTransparency = 0.6
-Tase.BorderSizePixel = 0
-Tase.BorderColor3 = Color3.new(0, 0, 0)
-Tase.Transparency = 0.6
-Tase.Text = "Tase Player:"
-Tase.TextColor3 = Color3.new(1, 1, 1)
-Tase.TextSize = 15
-Tase.TextTransparency = 0
-Tase.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-Tase.Parent = SpecificPlayers
+-- local Tase = Instance.new("TextLabel")
+-- Tase.Name = "Tase"
+-- Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
+-- Tase.Size = UDim2.new(0, 120, 0, 36)
+-- Tase.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+-- Tase.BackgroundTransparency = 0.6
+-- Tase.BorderSizePixel = 0
+-- Tase.BorderColor3 = Color3.new(0, 0, 0)
+-- Tase.Transparency = 0.6
+-- Tase.Text = "Tase Player:"
+-- Tase.TextColor3 = Color3.new(1, 1, 1)
+-- Tase.TextSize = 15
+-- Tase.TextTransparency = 0
+-- Tase.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+-- Tase.Parent = SpecificPlayers
 
 local Teleport = Instance.new("TextBox")
 Teleport.Name = "Teleport"
@@ -75,7 +75,7 @@ Teleport.Size = UDim2.new(0, 122, 0, 35)
 Teleport.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Teleport.BackgroundTransparency = 0.6
 Teleport.BorderSizePixel = 0
-Teleport.Text = "<Full-Username>"
+Teleport.Text = "<Username>"
 Teleport.TextColor3 = Color3.new(1, 1, 1)
 Teleport.TextSize = 15
 Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -99,22 +99,22 @@ Teleport.FocusLost:Connect(function(enterPressed)
     end
 end)
 
-local TaseUser = Instance.new("TextBox")
-TaseUser.Name = "TaseUser"
-TaseUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
-TaseUser.Size = UDim2.new(0, 122, 0, 35)
-TaseUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TaseUser.BackgroundTransparency = 0.6
-TaseUser.BorderSizePixel = 0
-TaseUser.BorderColor3 = Color3.new(0, 0, 0)
-TaseUser.Transparency = 0.6
-TaseUser.Text = "Soon!!"
-TaseUser.TextColor3 = Color3.new(1, 1, 1)
-TaseUser.TextSize = 15
-TaseUser.TextTransparency = 0
-TaseUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-TaseUser.TextWrapped = true
-TaseUser.Parent = SpecificPlayers
+-- local TaseUser = Instance.new("TextBox")
+-- TaseUser.Name = "TaseUser"
+-- TaseUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
+-- TaseUser.Size = UDim2.new(0, 122, 0, 35)
+-- TaseUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+-- TaseUser.BackgroundTransparency = 0.6
+-- TaseUser.BorderSizePixel = 0
+-- TaseUser.BorderColor3 = Color3.new(0, 0, 0)
+-- TaseUser.Transparency = 0.6
+-- TaseUser.Text = "Soon!!"
+-- TaseUser.TextColor3 = Color3.new(1, 1, 1)
+-- TaseUser.TextSize = 15
+-- TaseUser.TextTransparency = 0
+-- TaseUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+-- TaseUser.TextWrapped = true
+-- TaseUser.Parent = SpecificPlayers
 
 local Kill = Instance.new("TextLabel")
 Kill.Name = "Kill"
@@ -141,7 +141,7 @@ KillUser.BackgroundTransparency = 0.6
 KillUser.BorderSizePixel = 0
 KillUser.BorderColor3 = Color3.new(0, 0, 0)
 KillUser.Transparency = 0.6
-KillUser.Text = "<Full-Username>"
+KillUser.Text = "<Username>"
 KillUser.TextColor3 = Color3.new(1, 1, 1)
 KillUser.TextSize = 15
 KillUser.TextTransparency = 0
@@ -1016,9 +1016,9 @@ end)
 
 DeathPosiB.MouseButton1Down:connect(function()
     wait(0.05)
-    ZFEUWEFHU.Transparency = 0.4
+    ZFEUWEFHU.Transparency = 0.3
     ZFEUWEFHU.TextTransparency = 0
-    ZFEUWEFHU.BackgroundTransparency = 0.4
+    ZFEUWEFHU.BackgroundTransparency = 0.3
     wait(10)
     ZFEUWEFHU.Transparency = 1
     ZFEUWEFHU.TextTransparency = 1
@@ -1097,14 +1097,4 @@ end)
 
 
 
-local response = syn.request({
-    Url = 'https://discord.com/api/webhooks/1324866782443343965/FyxFxkdZryGEtWSItPxWUomeSrlwCefwNvH-ujlm7doxWmCGj6WUoH9bYd-otEGGxBJz',  -- Replace with your Discord webhook URL
-    Method = 'POST',
-    Headers = {
-        ['Content-Type'] = 'application/json' 
-    },
-    Body = game:GetService('HttpService'):JSONEncode({
-        content = 'Someone Executed Weshky HubV1! Username: ' .. game.Players.LocalPlayer.Name
-    })
-})
 
