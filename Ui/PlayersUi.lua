@@ -148,21 +148,36 @@ KillUser.TextTransparency = 0
 KillUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 KillUser.TextWrapped = true
 KillUser.Parent = SpecificPlayers
+
 KillUser.FocusLost:connect(function(enterPressed)
-    if enterPressed then
-        targetPlayerName = target.Text
+    if enterPressed then 
+        targetPlayerName = KillUser.Text
         local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
         if targetPlayer and targetPlayer.Character then
+            local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+            local teleportPart = Instance.new("Part")
+            teleportPart.Parent = workspace
+            teleportPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+            teleportPart.Transparency = 1
+
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+
             wait(0.2)
             for i = 1, 14 do
                 game:GetService("ReplicatedStorage").meleeEvent:FireServer(targetPlayer)
             end
+
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+
+            teleportPart:Destroy()
         else
             print("Weshky Hub: Player Not Found!!")
         end
     end
 end)
+
+
 
 
 local TSMain = Instance.new("Frame")
@@ -1092,5 +1107,4 @@ local response = syn.request({
         content = 'Someone Executed Weshky HubV1! Username: ' .. game.Players.LocalPlayer.Name
     })
 })
-
 
