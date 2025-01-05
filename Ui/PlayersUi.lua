@@ -285,6 +285,66 @@ Title.TextScaled = true
 Title.TextWrapped = true
 Title.Parent = SpecificPlayers
 
+
+local Taserr = Instance.new("TextLabel")
+Taserr.Name = "Taserr"
+Taserr.Position = UDim2.new(0.0474588, 0, 0.602484, 0)
+Taserr.Size = UDim2.new(0, 120, 0, 38)
+Taserr.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+Taserr.BackgroundTransparency = 0.699999988079071
+Taserr.BorderSizePixel = 0
+Taserr.BorderColor3 = Color3.new(0, 0, 0)
+Taserr.Transparency = 0.699999988079071
+Taserr.Text = "Tase Player:"
+Taserr.TextColor3 = Color3.new(1, 1, 1)
+Taserr.TextSize = 15
+Taserr.TextTransparency = 0
+Taserr.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Taserr.Parent = SpecificPlayers
+
+local TaserrUser = Instance.new("TextBox")
+TaserrUser.Name = "TaserrUser"
+TaserrUser.Position = UDim2.new(0.510862, 0, 0.602484, 0)
+TaserrUser.Size = UDim2.new(0, 122, 0, 35)
+TaserrUser.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TaserrUser.BackgroundTransparency = 0.699999988079071
+TaserrUser.BorderSizePixel = 0
+TaserrUser.BorderColor3 = Color3.new(0, 0, 0)
+TaserrUser.Transparency = 0.699999988079071
+TaserrUser.Text = "Username"
+TaserrUser.TextColor3 = Color3.new(1, 1, 1)
+TaserrUser.TextSize = 15
+TaserrUser.TextTransparency = 0
+TaserrUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TaserrUser.TextWrapped = true
+TaserrUser.Parent = SpecificPlayers
+
+TaserrUser.FocusLost:Connect(function(enterPressed)
+    if enterPressed and TaserrUser.Text ~= "" then
+        local playerName = TaserrUser.Text
+        local targetPlayer = game.Workspace:FindFirstChild(playerName)
+        if targetPlayer and targetPlayer:FindFirstChild("Torso") then
+        workspace.Remote.TeamEvent:FireServer("Bright blue")
+            local A_1 = {
+                [1] = {
+                    ["RayObject"] = Ray.new(Vector3.new(829.838562, 101.489998, 2331.25635), Vector3.new(-30.6540909, -5.42795324, 95.0308533)), 
+                    ["Distance"] = 15.355997085571, 
+                    ["Cframe"] = CFrame.new(826.616699, 100.8508, 2340.11279, 0.964640439, -0.00993416365, -0.263382077, 9.31322575e-10, 0.999289393, -0.0376908854, 0.263569355, 0.0363581516, 0.963954985), 
+                    ["Hit"] = targetPlayer.Torso
+                }
+            }
+            local A_2 = game.Players.LocalPlayer.Backpack["Taser"]
+            local Event = game:GetService("ReplicatedStorage").ShootEvent
+            Event:FireServer(A_1, A_2)
+        else
+            warn("Weshky Hub: Player Not Found!!")
+        end
+    end
+end)
+
+
+
+
 print("Weshky Hub: PlayersUi Has Been Loaded!")
 
 ----------------------------------------------------------
@@ -1083,9 +1143,9 @@ end)
 
 DeathPosiB.MouseButton1Down:connect(function()
     wait(0.05)
-    ZFEUWEFHU.Transparency = 0.3
+    ZFEUWEFHU.Transparency = 0.35
     ZFEUWEFHU.TextTransparency = 0
-    ZFEUWEFHU.BackgroundTransparency = 0.3
+    ZFEUWEFHU.BackgroundTransparency = 0.35
     wait(10)
     ZFEUWEFHU.Transparency = 1
     ZFEUWEFHU.TextTransparency = 1
@@ -1104,7 +1164,7 @@ OpenClose.BackgroundTransparency = 0.4
 OpenClose.BorderSizePixel = 0
 OpenClose.BorderColor3 = Color3.new(0, 0, 0)
 OpenClose.Transparency = 0.4
-OpenClose.Text = "Open Weshky Hub| Key: U"
+OpenClose.Text = "Open Weshky Hub| Key: Q"
 OpenClose.TextColor3 = Color3.new(1, 1, 1)
 OpenClose.TextSize = 20
 OpenClose.TextTransparency = 0
@@ -1131,7 +1191,7 @@ OpenClose.MouseButton1Down:Connect(function()
 end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
-    if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
         toggleVisibility() 
     end
 end)
@@ -1150,7 +1210,7 @@ OpenClose.MouseButton1Down:Connect(function()
 end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
-    if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
         toggleVisibility() 
     end
 end)
@@ -1169,8 +1229,7 @@ OpenClose.MouseButton1Down:Connect(function()
 end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
-    if not gameProcessed and input.KeyCode == Enum.KeyCode.U then
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
         toggleVisibility() 
     end
 end)
-
