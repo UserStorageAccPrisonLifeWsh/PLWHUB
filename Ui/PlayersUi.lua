@@ -311,7 +311,7 @@ TaserrUser.BackgroundTransparency = 0.699999988079071
 TaserrUser.BorderSizePixel = 0
 TaserrUser.BorderColor3 = Color3.new(0, 0, 0)
 TaserrUser.Transparency = 0.699999988079071
-TaserrUser.Text = "Username"
+TaserrUser.Text = "<Username, Press Enter>"
 TaserrUser.TextColor3 = Color3.new(1, 1, 1)
 TaserrUser.TextSize = 15
 TaserrUser.TextTransparency = 0
@@ -336,6 +336,7 @@ TaserrUser.FocusLost:Connect(function(enterPressed)
             local A_2 = game.Players.LocalPlayer.Backpack["Taser"]
             local Event = game:GetService("ReplicatedStorage").ShootEvent
             Event:FireServer(A_1, A_2)
+            TaserrUser.Text = "<Username>"
         else
             warn("Weshky Hub: Player Not Found!!")
         end
