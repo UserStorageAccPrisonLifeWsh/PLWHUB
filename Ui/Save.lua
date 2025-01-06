@@ -14,6 +14,9 @@ print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
 
 local UIS = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
 
 local WHubAddon = Instance.new("ScreenGui")
 WHubAddon.Name = "WHubAddon"
@@ -54,14 +57,14 @@ Tp.Parent = SpecificPlayers
 
 local Tase = Instance.new("TextLabel")
 Tase.Name = "Tase"
-Tase.Position = UDim2.new(0.0509676, 0, 0.320514, 0)
+Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
 Tase.Size = UDim2.new(0, 120, 0, 36)
 Tase.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Tase.BackgroundTransparency = 0.6
 Tase.BorderSizePixel = 0
 Tase.BorderColor3 = Color3.new(0, 0, 0)
 Tase.Transparency = 0.6
-Tase.Text = "Tase Player:"
+Tase.Text = "Arrest Player:"
 Tase.TextColor3 = Color3.new(1, 1, 1)
 Tase.TextSize = 15
 Tase.TextTransparency = 0
@@ -75,7 +78,7 @@ Teleport.Size = UDim2.new(0, 122, 0, 35)
 Teleport.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Teleport.BackgroundTransparency = 0.6
 Teleport.BorderSizePixel = 0
-Teleport.Text = "<Username>"
+Teleport.Text = "<Username, Press Enter>"
 Teleport.TextColor3 = Color3.new(1, 1, 1)
 Teleport.TextSize = 15
 Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -88,8 +91,10 @@ local function teleportToPlayer(playerName)
 
     if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
         localPlayer.Character:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
+        Teleport.Text = "<Username>"
     else
-        warn("Wehsky Hub: Player Not Found: " .. playerName)
+        print("Wehsky Hub: Player Not Found: " .. playerName)
+        Teleport.Text = "<Username>"
     end
 end
 
@@ -99,26 +104,85 @@ Teleport.FocusLost:Connect(function(enterPressed)
     end
 end)
 
-local TaseUser = Instance.new("TextBox")
-TaseUser.Name = "TaseUser"
-TaseUser.Position = UDim2.new(0.517879, 0, 0.320514, 0)
-TaseUser.Size = UDim2.new(0, 122, 0, 35)
-TaseUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TaseUser.BackgroundTransparency = 0.6
-TaseUser.BorderSizePixel = 0
-TaseUser.BorderColor3 = Color3.new(0, 0, 0)
-TaseUser.Transparency = 0.6
-TaseUser.Text = "Soon!!"
-TaseUser.TextColor3 = Color3.new(1, 1, 1)
-TaseUser.TextSize = 15
-TaseUser.TextTransparency = 0
-TaseUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-TaseUser.TextWrapped = true
-TaseUser.Parent = SpecificPlayers
+local ArrestUser = Instance.new("TextBox")
+ArrestUser.Name = "ArrestUser"
+ArrestUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
+ArrestUser.Size = UDim2.new(0, 122, 0, 35)
+ArrestUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+ArrestUser.BackgroundTransparency = 0.6
+ArrestUser.BorderSizePixel = 0
+ArrestUser.BorderColor3 = Color3.new(0, 0, 0)
+ArrestUser.Transparency = 0.6
+ArrestUser.Text = "<Username, Press Enter>"
+ArrestUser.TextColor3 = Color3.new(1, 1, 1)
+ArrestUser.TextSize = 15
+ArrestUser.TextTransparency = 0
+ArrestUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+ArrestUser.TextWrapped = true
+ArrestUser.Parent = SpecificPlayers
+
+ArrestUser.FocusLost:connect(function(enterPressed) 
+    if enterPressed then 
+        local targetPlayerName = ArrestUser.Text 
+        local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
+        if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            print("Whesky Hub: Player found:", targetPlayerName)
+
+            local localPlayer = game.Players.LocalPlayer
+            local humanoidRootPart = localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if not humanoidRootPart then
+                wait(0.0001)
+                return
+            end
+
+            local returnPart = Instance.new("Part")
+            returnPart.Parent = workspace
+            returnPart.CFrame = humanoidRootPart.CFrame
+            returnPart.Anchored = true
+            returnPart.Transparency = 1
+            returnPart.BrickColor = BrickColor.new("Bright yellow")
+            returnPart.Size = Vector3.new(2, 0.5, 2) 
+            returnPart.CanCollide = false
+
+            local character = targetPlayer.Character
+            local targetHRP = character and character:FindFirstChild("HumanoidRootPart")
+            
+            if targetHRP and targetPlayer.Character:FindFirstChild("Humanoid") then
+                local humanoid = character.Humanoid
+                if humanoid.SeatPart then
+                    repeat
+                        wait(0.5)
+                    until not humanoid.SeatPart
+                end
+            end
+
+            humanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+            wait(0.2)
+
+            local i = 0
+            repeat
+                wait()
+                humanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+                game.Workspace.Remote.arrest:InvokeServer(targetPlayer.Character.HumanoidRootPart)
+                i = i + 1
+            until i == 5
+
+            wait(0.5)
+            humanoidRootPart.CFrame = returnPart.CFrame
+            returnPart:Destroy()
+            Arrest.Text = "<Username>"
+
+        else
+            print("Whesky Hub: Player Not Found!!")
+            ArrestUser.Text = "<Username>"
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
+        end
+    end
+end)
 
 local Kill = Instance.new("TextLabel")
 Kill.Name = "Kill"
-Kill.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
+Kill.Position = UDim2.new(0.0509676, 0, 0.320514, 0)
 Kill.Size = UDim2.new(0, 120, 0, 36)
 Kill.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Kill.BackgroundTransparency = 0.6
@@ -134,20 +198,52 @@ Kill.Parent = SpecificPlayers
 
 local KillUser = Instance.new("TextBox")
 KillUser.Name = "KillUser"
-KillUser.Position = UDim2.new(0.517879, 0, 0.463798, 0)
+KillUser.Position = UDim2.new(0.517879, 0, 0.320514, 0)
 KillUser.Size = UDim2.new(0, 122, 0, 35)
 KillUser.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 KillUser.BackgroundTransparency = 0.6
 KillUser.BorderSizePixel = 0
 KillUser.BorderColor3 = Color3.new(0, 0, 0)
 KillUser.Transparency = 0.6
-KillUser.Text = "Soon!!"
+KillUser.Text = "<Username, Press Enter>"
 KillUser.TextColor3 = Color3.new(1, 1, 1)
 KillUser.TextSize = 15
 KillUser.TextTransparency = 0
 KillUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 KillUser.TextWrapped = true
 KillUser.Parent = SpecificPlayers
+
+KillUser.FocusLost:connect(function(enterPressed)
+    if enterPressed then 
+        targetPlayerName = KillUser.Text
+        local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
+        if targetPlayer and targetPlayer.Character then
+            local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+            local teleportPart = Instance.new("Part")
+            teleportPart.Parent = workspace
+            teleportPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+            teleportPart.Transparency = 1
+
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+
+            wait(0.2)
+            for i = 1, 14 do
+                game:GetService("ReplicatedStorage").meleeEvent:FireServer(targetPlayer)
+            end
+
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+            KillUser.Text = "<Username>"
+            teleportPart:Destroy()
+        else
+            print("Weshky Hub: Player Not Found!!")
+            KillUser.Text = "<Username>"
+        end
+    end
+end)
+
+
+
 
 local TSMain = Instance.new("Frame")
 TSMain.Name = "TSMain"
@@ -189,6 +285,72 @@ Title.TextScaled = true
 Title.TextWrapped = true
 Title.Parent = SpecificPlayers
 
+
+local Taserr = Instance.new("TextLabel")
+Taserr.Name = "Taserr"
+Taserr.Position = UDim2.new(0.0474588, 0, 0.602484, 0)
+Taserr.Size = UDim2.new(0, 120, 0, 38)
+Taserr.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+Taserr.BackgroundTransparency = 0.699999988079071
+Taserr.BorderSizePixel = 0
+Taserr.BorderColor3 = Color3.new(0, 0, 0)
+Taserr.Transparency = 0.699999988079071
+Taserr.Text = "Tase Player:"
+Taserr.TextColor3 = Color3.new(1, 1, 1)
+Taserr.TextSize = 15
+Taserr.TextTransparency = 0
+Taserr.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Taserr.Parent = SpecificPlayers
+
+local TaserrUser = Instance.new("TextBox")
+TaserrUser.Name = "TaserrUser"
+TaserrUser.Position = UDim2.new(0.510862, 0, 0.602484, 0)
+TaserrUser.Size = UDim2.new(0, 122, 0, 35)
+TaserrUser.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TaserrUser.BackgroundTransparency = 0.699999988079071
+TaserrUser.BorderSizePixel = 0
+TaserrUser.BorderColor3 = Color3.new(0, 0, 0)
+TaserrUser.Transparency = 0.699999988079071
+TaserrUser.Text = "<Username, Press Enter>"
+TaserrUser.TextColor3 = Color3.new(1, 1, 1)
+TaserrUser.TextSize = 15
+TaserrUser.TextTransparency = 0
+TaserrUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TaserrUser.TextWrapped = true
+TaserrUser.Parent = SpecificPlayers
+
+TaserrUser.FocusLost:Connect(function(enterPressed)
+    if enterPressed and TaserrUser.Text ~= "" then
+        local playerName = TaserrUser.Text
+        local targetPlayer = game.Workspace:FindFirstChild(playerName)
+        if targetPlayer and targetPlayer:FindFirstChild("Torso") then
+        local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        workspace.Remote.TeamEvent:FireServer("Bright blue")
+        wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+        wait(0.2)
+            local A_1 = {
+                [1] = {
+                    ["RayObject"] = Ray.new(Vector3.new(829.838562, 101.489998, 2331.25635), Vector3.new(-30.6540909, -5.42795324, 95.0308533)), 
+                    ["Distance"] = 15.355997085571, 
+                    ["Cframe"] = CFrame.new(826.616699, 100.8508, 2340.11279, 0.964640439, -0.00993416365, -0.263382077, 9.31322575e-10, 0.999289393, -0.0376908854, 0.263569355, 0.0363581516, 0.963954985), 
+                    ["Hit"] = targetPlayer.Torso
+                }
+            }
+            local A_2 = game.Players.LocalPlayer.Backpack["Taser"]
+            local Event = game:GetService("ReplicatedStorage").ShootEvent
+            Event:FireServer(A_1, A_2)
+            TaserrUser.Text = "<Username>"
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+        else
+            warn("Weshky Hub: Player Not Found!!")
+        end
+    end
+end)
+
+
+
+
 print("Weshky Hub: PlayersUi Has Been Loaded!")
 
 ----------------------------------------------------------
@@ -227,9 +389,9 @@ DeathPosiB.BorderColor3 = Color3.new(0, 0, 0)
 DeathPosiB.Transparency = 0.6
 DeathPosiB.Text = "Death Position"
 DeathPosiB.TextColor3 = Color3.new(1, 1, 1)
-DeathPosiB.TextSize = 25
+DeathPosiB.TextSize = 24
 DeathPosiB.TextTransparency = 0
-DeathPosiB.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DeathPosiB.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 DeathPosiB.Parent = Frame
 
 local Frame232 = Instance.new("Frame")
@@ -259,9 +421,9 @@ MAINLABEL2.BorderColor3 = Color3.new(0, 0, 0)
 MAINLABEL2.Transparency = 0.6
 MAINLABEL2.Text = "Main Scripts, Execute these scripts after Starting Whesky Hub:"
 MAINLABEL2.TextColor3 = Color3.new(1, 1, 1)
-MAINLABEL2.TextSize = 18
+MAINLABEL2.TextSize = 17
 MAINLABEL2.TextTransparency = 0
-MAINLABEL2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+MAINLABEL2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 MAINLABEL2.Parent = Frame
 
 local UICorner3 = Instance.new("UICorner")
@@ -427,7 +589,7 @@ TPPRISON.BackgroundTransparency = 0.7
 TPPRISON.BorderSizePixel = 0
 TPPRISON.BorderColor3 = Color3.new(0, 0, 0)
 TPPRISON.Transparency = 0.7
-TPPRISON.Text = "You need a good Executor, Dont Hold the Weapon in you Hand!!"
+TPPRISON.Text = "You need a good Executor, Hold the Weapon in you Hand!!"
 TPPRISON.TextColor3 = Color3.new(1, 0.34902, 0.34902)
 TPPRISON.TextSize = 14
 TPPRISON.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
@@ -441,6 +603,7 @@ ModRem870.Position = UDim2.new(0.018, 0, 0.697, 0)
 ModRem870.Size = UDim2.new(0, 200, 0, 30)
 ModRem870.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 ModRem870.BackgroundTransparency = 0.7
+ModRem870.BorderSizePixel = 0
 ModRem870.BorderColor3 = Color3.new(0, 0, 0)
 ModRem870.Transparency = 0.7
 ModRem870.Text = "Modding Remington 870"
@@ -513,8 +676,8 @@ ArrestEveryone.Parent = Extra
 
 local Fly = Instance.new("TextButton")
 Fly.Name = "Fly"
-Fly.Position = UDim2.new(0.506254, 0, 0.62, 0)
-Fly.Size = UDim2.new(0, 93, 0, 32)
+Fly.Position = UDim2.new(0.507888, 0, 0.821987, 0)
+Fly.Size = UDim2.new(0, 92, 0, 33)
 Fly.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Fly.BackgroundTransparency = 0.7
 Fly.BorderSizePixel = 0
@@ -527,6 +690,23 @@ Fly.TextTransparency = 0
 Fly.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Fly.TextWrapped = true
 Fly.Parent = Extra
+
+local Crashservers = Instance.new("TextButton")
+Crashservers.Name = "Crashservers"
+Crashservers.Position = UDim2.new(0.506254, 0, 0.62, 0)
+Crashservers.Size = UDim2.new(0, 93, 0, 32)
+Crashservers.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+Crashservers.BackgroundTransparency = 0.7
+Crashservers.BorderSizePixel = 0
+Crashservers.BorderColor3 = Color3.new(0, 0, 0)
+Crashservers.Transparency = 0.7
+Crashservers.Text = "Crash Server"
+Crashservers.TextColor3 = Color3.new(1, 1, 1)
+Crashservers.TextSize = 16
+Crashservers.TextTransparency = 0
+Crashservers.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Crashservers.TextWrapped = true
+Crashservers.Parent = Extra
 
 local TaserBypass = Instance.new("TextButton")
 TaserBypass.Name = "TaserBypass"
@@ -886,6 +1066,76 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = Main
 
+
+
+----------------------------------------------
+                -- Teams UI
+----------------------------------------------
+
+local TeamCH = Instance.new("Frame")
+TeamCH.Name = "TeamCH"
+TeamCH.Position = UDim2.new(0.022, 0,0.426, 0)
+TeamCH.Size = UDim2.new(0, 254, 0, 100)
+TeamCH.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamCH.BackgroundTransparency = 0.4
+TeamCH.BorderSizePixel = 0
+TeamCH.BorderColor3 = Color3.new(0, 0, 0)
+TeamCH.Transparency = 0.4
+TeamCH.Parent = WHub2
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+
+UICorner.Parent = TeamCH
+
+local TeamPr = Instance.new("TextButton")
+TeamPr.Name = "TeamPr"
+TeamPr.Position = UDim2.new(0, 0, 0.353136, 0)
+TeamPr.Size = UDim2.new(0, 254, 0, 30)
+TeamPr.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamPr.BackgroundTransparency = 1
+TeamPr.BorderSizePixel = 0
+TeamPr.BorderColor3 = Color3.new(0, 0, 0)
+TeamPr.Transparency = 1
+TeamPr.Text = "Join Team Prisoner"
+TeamPr.TextColor3 = Color3.new(1, 0.615686, 0.0784314)
+TeamPr.TextSize = 24
+TeamPr.TextTransparency = 0
+TeamPr.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TeamPr.Parent = TeamCH
+
+local TeamCrim = Instance.new("TextButton")
+TeamCrim.Name = "TeamCrim"
+TeamCrim.Position = UDim2.new(0, 0, 0.0410349, 0)
+TeamCrim.Size = UDim2.new(0, 254, 0, 31)
+TeamCrim.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamCrim.BackgroundTransparency = 1
+TeamCrim.BorderSizePixel = 0
+TeamCrim.BorderColor3 = Color3.new(0, 0, 0)
+TeamCrim.Transparency = 1
+TeamCrim.Text = "Join Team Criminal"
+TeamCrim.TextColor3 = Color3.new(1, 0, 0)
+TeamCrim.TextSize = 24
+TeamCrim.TextTransparency = 0
+TeamCrim.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TeamCrim.Parent = TeamCH
+
+local TeamGuards = Instance.new("TextButton")
+TeamGuards.Name = "TeamGuards"
+TeamGuards.Position = UDim2.new(0, 0, 0.645236, 0)
+TeamGuards.Size = UDim2.new(0, 254, 0, 30)
+TeamGuards.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamGuards.BackgroundTransparency = 1
+TeamGuards.BorderSizePixel = 0
+TeamGuards.BorderColor3 = Color3.new(0, 0, 0)
+TeamGuards.Transparency = 1
+TeamGuards.Text = "Join Team Guard"
+TeamGuards.TextColor3 = Color3.new(0.0235294, 0.282353, 1)
+TeamGuards.TextSize = 24
+TeamGuards.TextTransparency = 0
+TeamGuards.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TeamGuards.Parent = TeamCH
+
 print("Weshky Hub: MainUI Has Been Loaded!")
 
 ----------------------------------------------------------
@@ -902,7 +1152,7 @@ print("-----------------------------------------------------")
 -- ~Julia
 
 GetAK_47.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua'),true))()
 end)
 
 GetM4A1.MouseButton1Down:connect(function()
@@ -926,7 +1176,9 @@ DexExploder.MouseButton1Down:connect(function()
 end)
 
 JoinRed.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()
+    wait(3)
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
 end)
 
 ArrestEveryone.MouseButton1Down:connect(function()
@@ -946,7 +1198,9 @@ TaserBypass.MouseButton1Down:connect(function()
 end)
 
 Fly.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua'),true))()
+    wait(3)
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
 end)
 
 KillAll.MouseButton1Down:connect(function()
@@ -958,7 +1212,7 @@ TaseAll.MouseButton1Down:connect(function()
 end)
 
 DeathPosiB.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
 end)
 
 ModAK.MouseButton1Down:connect(function()
@@ -977,6 +1231,24 @@ DontPunch.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
+Crashservers.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Crash.lua'),true))()    
+end)
+
+-- Teams
+
+TeamCrim.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+TeamGuards.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+TeamPr.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
 
 ----------------------------------------------------------
                     -- More:
@@ -984,32 +1256,31 @@ end)
 
 DeathPosiB.MouseButton1Down:connect(function()
     wait(0.05)
-    ZFEUWEFHU.Transparency = 0.4
-    ZFEUWEFHU.TextTransparency = 0
-    ZFEUWEFHU.BackgroundTransparency = 0.4
+    ZFEUWEFHU.Transparency = 1
+    ZFEUWEFHU.TextTransparency = 1
+    ZFEUWEFHU.BackgroundTransparency = 1
     wait(10)
     ZFEUWEFHU.Transparency = 1
     ZFEUWEFHU.TextTransparency = 1
     ZFEUWEFHU.BackgroundTransparency = 1
 end)
 
-
 -----------------------------------------------
 
 local OpenClose = Instance.new("TextButton")
 OpenClose.Name = "OpenClose"
-OpenClose.Position = UDim2.new(0.0177638, 0, 0.469438, 0)
-OpenClose.Size = UDim2.new(0, 200, 0, 50)
+OpenClose.Position = UDim2.new(0.022, 0,0.358, 0)
+OpenClose.Size = UDim2.new(0, 255,0, 50)
 OpenClose.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
 OpenClose.BackgroundTransparency = 0.4
 OpenClose.BorderSizePixel = 0
 OpenClose.BorderColor3 = Color3.new(0, 0, 0)
 OpenClose.Transparency = 0.4
-OpenClose.Text = "Open/ Close Weshky Hub"
+OpenClose.Text = "Open Weshky Hub| Key: Q"
 OpenClose.TextColor3 = Color3.new(1, 1, 1)
 OpenClose.TextSize = 20
 OpenClose.TextTransparency = 0
-OpenClose.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+OpenClose.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 OpenClose.Parent = WHub2
 
 local UICorner = Instance.new("UICorner")
@@ -1024,14 +1295,18 @@ local Main = Main
 local OpenClose = OpenClose
 
 local function toggleVisibility()
-    Main.Visible = not Main.Visible 
+    Main.Visible = not Main.Visible
 end
 
-
 OpenClose.MouseButton1Down:Connect(function()
-    toggleVisibility() 
+    toggleVisibility()
 end)
 
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+        toggleVisibility() 
+    end
+end)
 
 local player = game.Players.LocalPlayer
 local playerGui = WHub2
@@ -1039,14 +1314,18 @@ local Main = Frame
 local OpenClose = OpenClose
 
 local function toggleVisibility()
-    Main.Visible = not Main.Visible 
+    Main.Visible = not Main.Visible
 end
 
 OpenClose.MouseButton1Down:Connect(function()
     toggleVisibility()
 end)
 
-
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+        toggleVisibility() 
+    end
+end)
 
 local player = game.Players.LocalPlayer
 local playerGui = WHub2
@@ -1058,5 +1337,11 @@ local function toggleVisibility()
 end
 
 OpenClose.MouseButton1Down:Connect(function()
-    toggleVisibility() 
+    toggleVisibility()
+end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+        toggleVisibility() 
+    end
 end)
