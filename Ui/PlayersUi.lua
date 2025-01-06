@@ -1248,7 +1248,7 @@ end)
 
 TeamGuards.MouseButton1Down:connect(function()
     local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(0.25)
+    wait(0.2)
     workspace.Remote.TeamEvent:FireServer("Bright blue")
     wait(0.4)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
@@ -1257,9 +1257,9 @@ end)
 
 TeamPr.MouseButton1Down:connect(function()
     local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    wait(0.25)
+    wait(0.2)
     workspace.Remote.TeamEvent:FireServer("Bright orange")
-    wait(0.25)
+    wait(0.4)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
 end)
