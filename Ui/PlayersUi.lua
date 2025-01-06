@@ -324,7 +324,11 @@ TaserrUser.FocusLost:Connect(function(enterPressed)
         local playerName = TaserrUser.Text
         local targetPlayer = game.Workspace:FindFirstChild(playerName)
         if targetPlayer and targetPlayer:FindFirstChild("Torso") then
+        local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         workspace.Remote.TeamEvent:FireServer("Bright blue")
+        wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+        wait(0.2)
             local A_1 = {
                 [1] = {
                     ["RayObject"] = Ray.new(Vector3.new(829.838562, 101.489998, 2331.25635), Vector3.new(-30.6540909, -5.42795324, 95.0308533)), 
@@ -337,6 +341,7 @@ TaserrUser.FocusLost:Connect(function(enterPressed)
             local Event = game:GetService("ReplicatedStorage").ShootEvent
             Event:FireServer(A_1, A_2)
             TaserrUser.Text = "<Username>"
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
         else
             warn("Weshky Hub: Player Not Found!!")
         end
@@ -671,8 +676,8 @@ ArrestEveryone.Parent = Extra
 
 local Fly = Instance.new("TextButton")
 Fly.Name = "Fly"
-Fly.Position = UDim2.new(0.506254, 0, 0.62, 0)
-Fly.Size = UDim2.new(0, 93, 0, 32)
+Fly.Position = UDim2.new(0.507888, 0, 0.821987, 0)
+Fly.Size = UDim2.new(0, 92, 0, 33)
 Fly.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Fly.BackgroundTransparency = 0.7
 Fly.BorderSizePixel = 0
@@ -685,6 +690,23 @@ Fly.TextTransparency = 0
 Fly.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Fly.TextWrapped = true
 Fly.Parent = Extra
+
+local Crashservers = Instance.new("TextButton")
+Crashservers.Name = "Crashservers"
+Crashservers.Position = UDim2.new(0.506254, 0, 0.62, 0)
+Crashservers.Size = UDim2.new(0, 93, 0, 32)
+Crashservers.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+Crashservers.BackgroundTransparency = 0.7
+Crashservers.BorderSizePixel = 0
+Crashservers.BorderColor3 = Color3.new(0, 0, 0)
+Crashservers.Transparency = 0.7
+Crashservers.Text = "Crash Server"
+Crashservers.TextColor3 = Color3.new(1, 1, 1)
+Crashservers.TextSize = 16
+Crashservers.TextTransparency = 0
+Crashservers.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Crashservers.TextWrapped = true
+Crashservers.Parent = Extra
 
 local TaserBypass = Instance.new("TextButton")
 TaserBypass.Name = "TaserBypass"
@@ -1044,6 +1066,76 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = Main
 
+
+
+----------------------------------------------
+                -- Teams UI
+----------------------------------------------
+
+local TeamCH = Instance.new("Frame")
+TeamCH.Name = "TeamCH"
+TeamCH.Position = UDim2.new(0.022, 0,0.426, 0)
+TeamCH.Size = UDim2.new(0, 254, 0, 100)
+TeamCH.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamCH.BackgroundTransparency = 0.4
+TeamCH.BorderSizePixel = 0
+TeamCH.BorderColor3 = Color3.new(0, 0, 0)
+TeamCH.Transparency = 0.4
+TeamCH.Parent = WHub2
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+
+UICorner.Parent = TeamCH
+
+local TeamPr = Instance.new("TextButton")
+TeamPr.Name = "TeamPr"
+TeamPr.Position = UDim2.new(0, 0, 0.353136, 0)
+TeamPr.Size = UDim2.new(0, 254, 0, 30)
+TeamPr.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamPr.BackgroundTransparency = 1
+TeamPr.BorderSizePixel = 0
+TeamPr.BorderColor3 = Color3.new(0, 0, 0)
+TeamPr.Transparency = 1
+TeamPr.Text = "Join Prisoners"
+TeamPr.TextColor3 = Color3.new(1, 0.615686, 0.0784314)
+TeamPr.TextSize = 25
+TeamPr.TextTransparency = 0
+TeamPr.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TeamPr.Parent = TeamCH
+
+local TeamCrim = Instance.new("TextButton")
+TeamCrim.Name = "TeamCrim"
+TeamCrim.Position = UDim2.new(0, 0, 0.0410349, 0)
+TeamCrim.Size = UDim2.new(0, 254, 0, 31)
+TeamCrim.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamCrim.BackgroundTransparency = 1
+TeamCrim.BorderSizePixel = 0
+TeamCrim.BorderColor3 = Color3.new(0, 0, 0)
+TeamCrim.Transparency = 1
+TeamCrim.Text = "Join Criminals"
+TeamCrim.TextColor3 = Color3.new(1, 0, 0)
+TeamCrim.TextSize = 25
+TeamCrim.TextTransparency = 0
+TeamCrim.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TeamCrim.Parent = TeamCH
+
+local TeamGuards = Instance.new("TextButton")
+TeamGuards.Name = "TeamGuards"
+TeamGuards.Position = UDim2.new(0, 0, 0.645236, 0)
+TeamGuards.Size = UDim2.new(0, 254, 0, 30)
+TeamGuards.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+TeamGuards.BackgroundTransparency = 1
+TeamGuards.BorderSizePixel = 0
+TeamGuards.BorderColor3 = Color3.new(0, 0, 0)
+TeamGuards.Transparency = 1
+TeamGuards.Text = "Join Guards"
+TeamGuards.TextColor3 = Color3.new(0.0235294, 0.282353, 1)
+TeamGuards.TextSize = 25
+TeamGuards.TextTransparency = 0
+TeamGuards.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+TeamGuards.Parent = TeamCH
+
 print("Weshky Hub: MainUI Has Been Loaded!")
 
 ----------------------------------------------------------
@@ -1106,7 +1198,9 @@ TaserBypass.MouseButton1Down:connect(function()
 end)
 
 Fly.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua'),true))()    
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua'),true))()
+    wait(3)
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
 end)
 
 KillAll.MouseButton1Down:connect(function()
@@ -1137,6 +1231,24 @@ DontPunch.MouseButton1Down:connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
 end)
 
+Crashservers.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Crash.lua'),true))()    
+end)
+
+-- Teams
+
+TeamCrim.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+TeamGuards.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
+TeamPr.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet((''),true))()    
+end)
+
 
 ----------------------------------------------------------
                     -- More:
@@ -1144,15 +1256,14 @@ end)
 
 DeathPosiB.MouseButton1Down:connect(function()
     wait(0.05)
-    ZFEUWEFHU.Transparency = 0.35
-    ZFEUWEFHU.TextTransparency = 0
-    ZFEUWEFHU.BackgroundTransparency = 0.35
+    ZFEUWEFHU.Transparency = 1
+    ZFEUWEFHU.TextTransparency = 1
+    ZFEUWEFHU.BackgroundTransparency = 1
     wait(10)
     ZFEUWEFHU.Transparency = 1
     ZFEUWEFHU.TextTransparency = 1
     ZFEUWEFHU.BackgroundTransparency = 1
 end)
-
 
 -----------------------------------------------
 
