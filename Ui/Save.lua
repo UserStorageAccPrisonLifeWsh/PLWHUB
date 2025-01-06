@@ -1238,15 +1238,30 @@ end)
 -- Teams
 
 TeamCrim.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet((''),true))()    
+    local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.25)
+    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002)
+    wait(0.25)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()   
 end)
 
 TeamGuards.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet((''),true))()    
+    local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.25)
+    workspace.Remote.TeamEvent:FireServer("Bright blue")
+    wait(0.25)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()   
 end)
 
 TeamPr.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet((''),true))()    
+    local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.25)
+    workspace.Remote.TeamEvent:FireServer("Bright orange")
+    wait(0.25)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
 end)
 
 
@@ -1276,7 +1291,7 @@ OpenClose.BackgroundTransparency = 0.4
 OpenClose.BorderSizePixel = 0
 OpenClose.BorderColor3 = Color3.new(0, 0, 0)
 OpenClose.Transparency = 0.4
-OpenClose.Text = "Open Weshky Hub| Key: Q"
+OpenClose.Text = "Open Weshky Hub | Key: Q"
 OpenClose.TextColor3 = Color3.new(1, 1, 1)
 OpenClose.TextSize = 20
 OpenClose.TextTransparency = 0
