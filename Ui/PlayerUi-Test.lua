@@ -1173,16 +1173,81 @@ end)
                     -- More:
 ----------------------------------------------------------
 
-local function toggleVisibility(element)
-    element.Visible = not element.Visible
+local OpenClose = Instance.new("TextButton")
+OpenClose.Name = "OpenClose"
+OpenClose.Position = UDim2.new(0.022, 0,0.358, 0)
+OpenClose.Size = UDim2.new(0, 255,0, 50)
+OpenClose.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+OpenClose.BackgroundTransparency = 0.4
+OpenClose.BorderSizePixel = 0
+OpenClose.BorderColor3 = Color3.new(0, 0, 0)
+OpenClose.Transparency = 0.4
+OpenClose.Text = "Open Weshky Hub | Key: Q"
+OpenClose.TextColor3 = Color3.new(1, 1, 1)
+OpenClose.TextSize = 20
+OpenClose.TextTransparency = 0
+OpenClose.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+OpenClose.Parent = WHub2
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+
+UICorner.Parent = OpenClose
+
+
+local player = game.Players.LocalPlayer
+local playerGui = WHub2
+local Main = Main
+local OpenClose = OpenClose
+
+local function toggleVisibility()
+    Main.Visible = not Main.Visible
 end
 
 OpenClose.MouseButton1Down:Connect(function()
-    toggleVisibility(Main)
+    toggleVisibility()
 end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
-        toggleVisibility(Main)
+        toggleVisibility() 
+    end
+end)
+
+local player = game.Players.LocalPlayer
+local playerGui = WHub2
+local Main = Frame
+local OpenClose = OpenClose
+
+local function toggleVisibility()
+    Main.Visible = not Main.Visible
+end
+
+OpenClose.MouseButton1Down:Connect(function()
+    toggleVisibility()
+end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+        toggleVisibility() 
+    end
+end)
+
+local player = game.Players.LocalPlayer
+local playerGui = WHub2
+local Main = SpecificPlayers
+local OpenClose = OpenClose
+
+local function toggleVisibility()
+    Main.Visible = not Main.Visible
+end
+
+OpenClose.MouseButton1Down:Connect(function()
+    toggleVisibility()
+end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+        toggleVisibility() 
     end
 end)
