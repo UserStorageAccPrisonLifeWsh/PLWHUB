@@ -1019,3 +1019,152 @@ TeamGuards.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", E
 TeamGuards.Parent = TeamCH
 
 print("Weshky Hub: MainUI Has Been Loaded!")
+----------------------------------------------------------
+                    -- Buttons
+----------------------------------------------------------
+
+print("Weshky Hub: Everything Has Been Loaded!")
+print("-----------------------------------------------------")
+print("Weshky Hub: Possible problems with Instant Scripts!")
+print("-----------------------------------------------------")
+
+-- Funktion zum Ausführen von Skripten mit Fehlerbehandlung
+local function executeScript(url)
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url, true))()
+    end)
+    if not success then
+        warn("Failed to execute script from " .. url .. ": " .. err)
+    end
+end
+
+-- Button-Events
+GetAK_47.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua')
+end)
+
+GetM4A1.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/M4A1.lua')
+end)
+
+GetRemington870.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Remington870.lua')
+end)
+
+GetM9.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Pistol.lua')
+end)
+
+InfiniteYield.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')
+end)
+
+DexExploder.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua')
+end)
+
+JoinRed.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua')
+    wait(3)
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
+end)
+
+ArrestEveryone.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/ArrestCrims.lua')
+end)
+
+Noclip.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Noclip.lua')
+end)
+
+Super_Punch.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/SuperPunch.lua')
+end)
+
+TaserBypass.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/TaserBypass.lua')
+end)
+
+Fly.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua')
+    wait(3)
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
+end)
+
+KillAll.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/KillAll.lua')
+end)
+
+TaseAll.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua')
+end)
+
+DeathPosiB.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
+end)
+
+ModAK.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AKMod.lua')
+end)
+
+ModM4A1.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/M4A1Mod.lua')
+end)
+
+ModRem870.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Rem870Mod.lua')
+end)
+
+DontPunch.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua')
+end)
+
+Crashservers.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Crash.lua')
+end)
+
+-- Teams
+TeamCrim.MouseButton1Down:Connect(function()
+    local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.2)
+    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002)
+    wait(0.45)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
+end)
+
+TeamGuards.MouseButton1Down:Connect(function()
+    local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.2)
+    workspace.Remote.TeamEvent:FireServer("Bright blue")
+    wait(0.45)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
+end)
+
+TeamPr.MouseButton1Down:Connect(function()
+    local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.2)
+    workspace.Remote.TeamEvent:FireServer("Bright orange")
+    wait(0.45)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
+end)
+
+----------------------------------------------------------
+                    -- More:
+----------------------------------------------------------
+
+local function toggleVisibility(element)
+    element.Visible = not element.Visible
+end
+
+OpenClose.MouseButton1Down:Connect(function()
+    toggleVisibility(Main)
+end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+        toggleVisibility(Main)
+    end
+end)
