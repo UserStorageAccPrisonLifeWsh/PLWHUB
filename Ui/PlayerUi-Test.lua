@@ -53,6 +53,24 @@ Tp.TextTransparency = 0
 Tp.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 Tp.Parent = SpecificPlayers
 
+local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Position = UDim2.new(-0.001, 0,0.014, 0)
+Title.Size = UDim2.new(0, 285, 0, 44)
+Title.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+Title.BackgroundTransparency = 1
+Title.BorderSizePixel = 0
+Title.BorderColor3 = Color3.new(0, 0, 0)
+Title.Transparency = 1
+Title.Text = "Players"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextSize = 14
+Title.TextTransparency = 0
+Title.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Title.TextScaled = true
+Title.TextWrapped = true
+Title.Parent = SpecificPlayers
+
 local Tase = Instance.new("TextLabel")
 Tase.Name = "Tase"
 Tase.Position = UDim2.new(0.0509676, 0, 0.463798, 0)
