@@ -13,6 +13,46 @@ print("Thanks for using Weshky Hub, you can check out the Discord 25 Members = U
 print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
 
+-----------------------------------------------
+         -- Notice UNC
+-----------------------------------------------
+local Warn = Instance.new("ScreenGui")
+Warn.Name = "Warn"
+Warn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Warn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local UNCFrame = Instance.new("Frame")
+UNCFrame.Name = "UNCFrame"
+UNCFrame.Position = UDim2.new(0.391057, 0, 0.096577, 0)
+UNCFrame.Size = UDim2.new(0, 268, 0, 44)
+UNCFrame.BackgroundColor3 = Color3.new(0.415686, 0.172549, 0.172549)
+UNCFrame.BackgroundTransparency = 0.15000000596046448
+UNCFrame.BorderSizePixel = 0
+UNCFrame.BorderColor3 = Color3.new(0, 0, 0)
+UNCFrame.Transparency = 0.15000000596046448
+UNCFrame.Parent = Warn
+
+local UNC = Instance.new("TextLabel")
+UNC.Name = "UNC"
+UNC.Position = UDim2.new(0, 0, 0.0681818, 0)
+UNC.Size = UDim2.new(0, 268, 0, 38)
+UNC.BackgroundColor3 = Color3.new(1, 1, 1)
+UNC.BackgroundTransparency = 1
+UNC.BorderSizePixel = 0
+UNC.BorderColor3 = Color3.new(0, 0, 0)
+UNC.Transparency = 1
+UNC.Text = "Warning: If you Executor is under 60% UNC some Functions dosent Support like modding weapons!"
+UNC.TextColor3 = Color3.new(1, 1, 1)
+UNC.TextSize = 14
+UNC.TextTransparency = 0
+UNC.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+UNC.TextWrapped = true
+UNC.Parent = Frame
+
+-----------------------------------------------
+         -- End Notice UNC
+-----------------------------------------------
+
 local UIS = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -1252,3 +1292,6 @@ game:GetService("UserInputService").InputBegan:Connect(function(input, gameProce
         toggleVisibility() 
     end
 end)
+
+tast.wait = 10
+UNCFrame.visible = false
