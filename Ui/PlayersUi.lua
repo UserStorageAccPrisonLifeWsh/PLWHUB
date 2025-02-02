@@ -14,12 +14,8 @@ print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
 
 -----------------------------------------------
-         -- Notice UNC
+              -- Notice UNC
 -----------------------------------------------
-local Warn = Instance.new("ScreenGui")
-Warn.Name = "Warn"
-Warn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Warn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local Warn = Instance.new("ScreenGui")
 Warn.Name = "Warn"
