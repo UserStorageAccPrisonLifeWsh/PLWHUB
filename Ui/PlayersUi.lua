@@ -13,6 +13,51 @@ print("Thanks for using Weshky Hub, you can check out the Discord 25 Members = U
 print("-----------------------------------------------------")
 print("Weshky Hub: Start Loading Everything!")
 
+-----------------------------------------------
+         -- Notice UNC
+-----------------------------------------------
+local Warn = Instance.new("ScreenGui")
+Warn.Name = "Warn"
+Warn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Warn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local Warn = Instance.new("ScreenGui")
+Warn.Name = "Warn"
+Warn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Warn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local UNCFrame = Instance.new("Frame")
+UNCFrame.Name = "UNCFrame"
+UNCFrame.Position = UDim2.new(0.35, 0, 0.096577, 0)
+UNCFrame.Size = UDim2.new(0, 575, 0, 44)
+UNCFrame.BackgroundColor3 = Color3.new(0.415686, 0.172549, 0.172549)
+UNCFrame.BackgroundTransparency = 0.15000000596046448
+UNCFrame.BorderSizePixel = 0
+UNCFrame.BorderColor3 = Color3.new(0, 0, 0)
+UNCFrame.Transparency = 0.15000000596046448
+UNCFrame.Parent = Warn
+
+local UNC = Instance.new("TextLabel")
+UNC.Name = "UNC"
+UNC.Position = UDim2.new(0.26, 0, 0.0681818, 0)
+UNC.Size = UDim2.new(0, 268, 0, 38)
+UNC.BackgroundColor3 = Color3.new(1, 1, 1)
+UNC.BackgroundTransparency = 1
+UNC.BorderSizePixel = 0
+UNC.BorderColor3 = Color3.new(0, 0, 0)
+UNC.Transparency = 1
+UNC.Text = "Warning: The most executor under 70% sUNC dosent execute some Functions like Modding Weapons!!"
+UNC.TextColor3 = Color3.new(1, 1, 1)
+UNC.TextSize = 14
+UNC.TextTransparency = 0
+UNC.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+UNC.TextWrapped = false
+UNC.Parent = UNCFrame
+
+-----------------------------------------------
+         -- End Notice UNC
+-----------------------------------------------
+
 local UIS = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -36,7 +81,6 @@ SpecificPlayers.Parent = WHubAddon
 
 local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
-
 UICorner.Parent = SpecificPlayers
 
 local Tp = Instance.new("TextLabel")
@@ -54,6 +98,24 @@ Tp.TextSize = 15
 Tp.TextTransparency = 0
 Tp.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 Tp.Parent = SpecificPlayers
+
+local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Position = UDim2.new(-0.001, 0,0.014, 0)
+Title.Size = UDim2.new(0, 285, 0, 44)
+Title.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
+Title.BackgroundTransparency = 1
+Title.BorderSizePixel = 0
+Title.BorderColor3 = Color3.new(0, 0, 0)
+Title.Transparency = 1
+Title.Text = "Players"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextSize = 14
+Title.TextTransparency = 0
+Title.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Title.TextScaled = true
+Title.TextWrapped = true
+Title.Parent = SpecificPlayers
 
 local Tase = Instance.new("TextLabel")
 Tase.Name = "Tase"
@@ -80,7 +142,7 @@ Teleport.BackgroundTransparency = 0.6
 Teleport.BorderSizePixel = 0
 Teleport.Text = "<Username, Press Enter>"
 Teleport.TextColor3 = Color3.new(1, 1, 1)
-Teleport.TextSize = 15https://github.com/UserStorageAccPrisonLifeWsh/PLWHUB/blob/main/Ui/PlayersUi.lua
+Teleport.TextSize = 15
 Teleport.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 Teleport.TextWrapped = true
 Teleport.Parent = SpecificPlayers
@@ -175,7 +237,6 @@ ArrestUser.FocusLost:connect(function(enterPressed)
         else
             print("Whesky Hub: Player Not Found!!")
             ArrestUser.Text = "<Username>"
-            loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
         end
     end
 end)
@@ -242,20 +303,6 @@ KillUser.FocusLost:connect(function(enterPressed)
     end
 end)
 
-
-
-
-local TSMain = Instance.new("Frame")
-TSMain.Name = "TSMain"
-TSMain.Position = UDim2.new(0.0203802, 0, 0.166511, 0)
-TSMain.Size = UDim2.new(0, 272, 0, 335)
-TSMain.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
-TSMain.BackgroundTransparency = 0.93
-TSMain.BorderSizePixel = 0
-TSMain.BorderColor3 = Color3.new(0, 0, 0)
-TSMain.Transparency = 0.93
-TSMain.Parent = SpecificPlayers
-
 local line = Instance.new("Frame")
 line.Name = "line"
 line.Position = UDim2.new(-0.005, 0,0.134, 0)
@@ -266,90 +313,6 @@ line.BorderSizePixel = 0
 line.BorderColor3 = Color3.new(0, 0, 0)
 line.Transparency = 0.30000001192092896
 line.Parent = SpecificPlayers
-
-local Title = Instance.new("TextLabel")
-Title.Name = "Title"
-Title.Position = UDim2.new(-0.001, 0,0.014, 0)
-Title.Size = UDim2.new(0, 285, 0, 44)
-Title.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-Title.BackgroundTransparency = 1
-Title.BorderSizePixel = 0
-Title.BorderColor3 = Color3.new(0, 0, 0)
-Title.Transparency = 1
-Title.Text = "Players"
-Title.TextColor3 = Color3.new(1, 1, 1)
-Title.TextSize = 14
-Title.TextTransparency = 0
-Title.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-Title.TextScaled = true
-Title.TextWrapped = true
-Title.Parent = SpecificPlayers
-
-
-local Taserr = Instance.new("TextLabel")
-Taserr.Name = "Taserr"
-Taserr.Position = UDim2.new(0.0474588, 0, 0.602484, 0)
-Taserr.Size = UDim2.new(0, 120, 0, 38)
-Taserr.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-Taserr.BackgroundTransparency = 0.699999988079071
-Taserr.BorderSizePixel = 0
-Taserr.BorderColor3 = Color3.new(0, 0, 0)
-Taserr.Transparency = 0.699999988079071
-Taserr.Text = "Tase Player:"
-Taserr.TextColor3 = Color3.new(1, 1, 1)
-Taserr.TextSize = 15
-Taserr.TextTransparency = 0
-Taserr.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-Taserr.Parent = SpecificPlayers
-
-local TaserrUser = Instance.new("TextBox")
-TaserrUser.Name = "TaserrUser"
-TaserrUser.Position = UDim2.new(0.510862, 0, 0.602484, 0)
-TaserrUser.Size = UDim2.new(0, 122, 0, 35)
-TaserrUser.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-TaserrUser.BackgroundTransparency = 0.699999988079071
-TaserrUser.BorderSizePixel = 0
-TaserrUser.BorderColor3 = Color3.new(0, 0, 0)
-TaserrUser.Transparency = 0.699999988079071
-TaserrUser.Text = "<Username, Press Enter>"
-TaserrUser.TextColor3 = Color3.new(1, 1, 1)
-TaserrUser.TextSize = 15
-TaserrUser.TextTransparency = 0
-TaserrUser.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-TaserrUser.TextWrapped = true
-TaserrUser.Parent = SpecificPlayers
-
-TaserrUser.FocusLost:Connect(function(enterPressed)
-    if enterPressed and TaserrUser.Text ~= "" then
-        local playerName = TaserrUser.Text
-        local targetPlayer = game.Workspace:FindFirstChild(playerName)
-        if targetPlayer and targetPlayer:FindFirstChild("Torso") then
-        local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        workspace.Remote.TeamEvent:FireServer("Bright blue")
-        wait(0.5)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
-        wait(0.2)
-            local A_1 = {
-                [1] = {
-                    ["RayObject"] = Ray.new(Vector3.new(829.838562, 101.489998, 2331.25635), Vector3.new(-30.6540909, -5.42795324, 95.0308533)), 
-                    ["Distance"] = 15.355997085571, 
-                    ["Cframe"] = CFrame.new(826.616699, 100.8508, 2340.11279, 0.964640439, -0.00993416365, -0.263382077, 9.31322575e-10, 0.999289393, -0.0376908854, 0.263569355, 0.0363581516, 0.963954985), 
-                    ["Hit"] = targetPlayer.Torso
-                }
-            }
-            local A_2 = game.Players.LocalPlayer.Backpack["Taser"]
-            local Event = game:GetService("ReplicatedStorage").ShootEvent
-            Event:FireServer(A_1, A_2)
-            TaserrUser.Text = "<Username>"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
-        else
-            warn("Weshky Hub: Player Not Found!!")
-        end
-    end
-end)
-
-
-
 
 print("Weshky Hub: PlayersUi Has Been Loaded!")
 
@@ -375,7 +338,6 @@ Frame.Parent = Add
 
 local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
-
 UICorner.Parent = Frame
 
 local DeathPosiB = Instance.new("TextButton")
@@ -468,15 +430,14 @@ Main.Name = "Main"
 Main.Position = UDim2.new(0.253, 0, 0.224, 0)
 Main.Size = UDim2.new(0, 650, 0, 411)
 Main.BackgroundColor3 = Color3.new(0.129412, 0.129412, 0.129412)
-Main.BackgroundTransparency = 0.15
+Main.BackgroundTransparency = 0.1
 Main.BorderSizePixel = 0
 Main.BorderColor3 = Color3.new(0, 0, 0)
-Main.Transparency = 0.15
+Main.Transparency = 0.1
 Main.Parent = WHub2
 
 local MainParts = Instance.new("Folder")
 MainParts.Name = "MainParts"
-
 MainParts.Parent = Main
 
 local GetRemington870 = Instance.new("TextButton")
@@ -589,7 +550,7 @@ TPPRISON.BackgroundTransparency = 0.7
 TPPRISON.BorderSizePixel = 0
 TPPRISON.BorderColor3 = Color3.new(0, 0, 0)
 TPPRISON.Transparency = 0.7
-TPPRISON.Text = "You need a good Executor, Hold the Weapon in you Hand!!"
+TPPRISON.Text = "You need a good Executor, And hold the Weapon in you Hand!!"
 TPPRISON.TextColor3 = Color3.new(1, 0.34902, 0.34902)
 TPPRISON.TextSize = 14
 TPPRISON.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
@@ -612,7 +573,6 @@ ModRem870.TextSize = 18
 ModRem870.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 ModRem870.TextTransparency = 0
 ModRem870.Parent = MainParts
-
 
 local DexExploder = Instance.new("TextButton")
 DexExploder.Name = "DexExploder"
@@ -956,7 +916,6 @@ General2.TextWrapped = true
 General2.TextTransparency = 0
 General2.Parent = General
 
-
 local Credits = Instance.new("Frame")
 Credits.Name = "Credits"
 Credits.Position = UDim2.new(0.672709, 0, 0.167883, 0)
@@ -1066,8 +1025,6 @@ UICorner.Name = "UICorner"
 
 UICorner.Parent = Main
 
-
-
 ----------------------------------------------
                 -- Teams UI
 ----------------------------------------------
@@ -1137,150 +1094,141 @@ TeamGuards.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", E
 TeamGuards.Parent = TeamCH
 
 print("Weshky Hub: MainUI Has Been Loaded!")
-
 ----------------------------------------------------------
                     -- Buttons
 ----------------------------------------------------------
-
 
 print("Weshky Hub: Everything Has Been Loaded!")
 print("-----------------------------------------------------")
 print("Weshky Hub: Possible problems with Instant Scripts!")
 print("-----------------------------------------------------")
 
--- Im Working on It
--- ~Julia
+-- Funktion zum Ausführen von Skripten mit Fehlerbehandlung
+local function executeScript(url)
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url, true))()
+    end)
+    if not success then
+        warn("Failed to execute script from " .. url .. ": " .. err)
+    end
+end
 
-GetAK_47.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua'),true))()
+-- Button-Events
+GetAK_47.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/AK-47.lua')
 end)
 
-GetM4A1.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/M4A1.lua'),true))()    
+GetM4A1.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/M4A1.lua')
 end)
 
-GetRemington870.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Remington870.lua'),true))()    
+GetRemington870.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Remington870.lua')
 end)
 
-GetM9.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Pistol.lua'),true))()    
+GetM9.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Weapons/Pistol.lua')
 end)
 
-InfiniteYield.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()    
+InfiniteYield.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')
 end)
 
-DexExploder.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua'),true))()    
+DexExploder.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua')
 end)
 
-JoinRed.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua'),true))()
+JoinRed.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Breakout.lua')
     wait(3)
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
 end)
 
-ArrestEveryone.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/ArrestCrims.lua'),true))()    
+ArrestEveryone.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/ArrestCrims.lua')
 end)
 
-Noclip.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Noclip.lua'),true))()    
+Noclip.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Noclip.lua')
 end)
 
-Super_Punch.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/SuperPunch.lua'),true))()    
+Super_Punch.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/SuperPunch.lua')
 end)
 
-TaserBypass.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/TaserBypass.lua'),true))()    
+TaserBypass.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/TaserBypass.lua')
 end)
 
-Fly.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua'),true))()
+Fly.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Fly.lua')
     wait(3)
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()    
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
 end)
 
-KillAll.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/KillAll.lua'),true))()    
+KillAll.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/KillAll.lua')
 end)
 
-TaseAll.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua'),true))()    
+TaseAll.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/TaseAll.lua')
 end)
 
-DeathPosiB.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
+DeathPosiB.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
 end)
 
-ModAK.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AKMod.lua'),true))()    
+ModAK.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AKMod.lua')
 end)
 
-ModM4A1.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/M4A1Mod.lua'),true))()    
+ModM4A1.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/M4A1Mod.lua')
 end)
 
-ModRem870.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Rem870Mod.lua'),true))()    
+ModRem870.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Rem870Mod.lua')
 end)
 
-DontPunch.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua'),true))()    
+DontPunch.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/AntiPunch.lua')
 end)
 
-Crashservers.MouseButton1Down:connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Crash.lua'),true))()    
+Crashservers.MouseButton1Down:Connect(function()
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/More/Crash.lua')
 end)
 
 -- Teams
-
-TeamCrim.MouseButton1Down:connect(function()
+TeamCrim.MouseButton1Down:Connect(function()
     local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(0.2)
     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002)
     wait(0.45)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()   
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
 end)
 
-TeamGuards.MouseButton1Down:connect(function()
+TeamGuards.MouseButton1Down:Connect(function()
     local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(0.2)
     workspace.Remote.TeamEvent:FireServer("Bright blue")
     wait(0.45)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()   
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
 end)
 
-TeamPr.MouseButton1Down:connect(function()
+TeamPr.MouseButton1Down:Connect(function()
     local originalPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     wait(0.2)
     workspace.Remote.TeamEvent:FireServer("Bright orange")
     wait(0.45)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition 
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua'),true))()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalPosition
+    executeScript('https://raw.githubusercontent.com/UserStorageAccPrisonLifeWsh/PLWHUB/refs/heads/main/Instand%20Script/DeathPosi.lua')
 end)
-
 
 ----------------------------------------------------------
                     -- More:
 ----------------------------------------------------------
-
-DeathPosiB.MouseButton1Down:connect(function()
-    wait(0.05)
-    ZFEUWEFHU.Transparency = 1
-    ZFEUWEFHU.TextTransparency = 1
-    ZFEUWEFHU.BackgroundTransparency = 1
-    wait(10)
-    ZFEUWEFHU.Transparency = 1
-    ZFEUWEFHU.TextTransparency = 1
-    ZFEUWEFHU.BackgroundTransparency = 1
-end)
-
------------------------------------------------
 
 local OpenClose = Instance.new("TextButton")
 OpenClose.Name = "OpenClose"
@@ -1311,6 +1259,7 @@ local OpenClose = OpenClose
 
 local function toggleVisibility()
     Main.Visible = not Main.Visible
+	UNCFrame.Visible = false
 end
 
 OpenClose.MouseButton1Down:Connect(function()
@@ -1360,3 +1309,5 @@ game:GetService("UserInputService").InputBegan:Connect(function(input, gameProce
         toggleVisibility() 
     end
 end)
+
+
