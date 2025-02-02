@@ -1,19 +1,41 @@
-local player = game:GetService("Players").LocalPlayer
 local Players = game:GetService("Players")
-local head = player.Character:FindFirstChild("Head")
-local hpr = player.Character:FindFirstChild("HumanoidRootPart")
-local hum = player.Character:FindFirstChildOfClass("Humanoid")
-function noclipFunction()
-	head.Touched:Connect(function(hit)
-		if hit:IsA("Part", "MeshPart") then
-			if hit.CanCollide == true then
-				hit.CanCollide = false
-				task.wait(0.5)
-				hit.CanCollide = true
-				hum.Health = hum.MaxHealth
-			end
-		end
-	end)
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local speaker = Players.LocalPlayer
+local Clip = false 
+local NoclipConnection
+
+local function SetNoclip(state)
+    if speaker.Character then
+        for _, part in pairs(speaker.Character:GetDescendants()) do
+            if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" and part.Name ~= "LowerTorso" and part.Name ~= "UpperTorso" then
+                part.CanCollide = not state
+            end
+        end
+    end
 end
-noclipFunction()
-Players.PlayerAdded:Connect(noclipFunction)
+
+local function ToggleNoclip(state)
+    if state then
+        NoclipConnection = RunService.Stepped:Connect(function()
+            SetNoclip(true)
+        end)
+    else
+        if NoclipConnection then
+            NoclipConnection:Disconnect()
+            NoclipConnection = nil
+        end
+        SetNoclip(false)
+    end
+end
+
+ToggleNoclip(true)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.R and not gameProcessed then
+        Clip = not Clip
+        ToggleNoclip(not Clip)
+    end
+end)
+
