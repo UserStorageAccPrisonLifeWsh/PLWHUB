@@ -1,5 +1,6 @@
 local webhookUrl = "https://discord.com/api/webhooks/1324866782443343965/FyxFxkdZryGEtWSItPxWUomeSrlwCefwNvH-ujlm7doxWmCGj6WUoH9bYd-otEGGxBJz" -- Ersetze DEINE_WEBHOOK_URL mit deinem tatsächlichen Webhook
 
+-- Funktion zum Senden der Nachricht an Discord
 local function sendDiscordMessage(message)
     local headers = {
         ["Content-Type"] = "application/json"
@@ -19,14 +20,16 @@ local function sendDiscordMessage(message)
     })
     
     if response.Success then
-
+        print("Nachricht erfolgreich gesendet!")
     else
-        warn(" " .. response.StatusMessage)
+        warn("Fehler beim Senden der Nachricht: " .. response.StatusMessage)
     end
 end
 
+-- Hauptlogik
 local username = game:GetService("Players").LocalPlayer.Name
-local message = "Weshky Hub Got Executed From " .. username
+local userid = game:GetService("Players").LocalPlayer.UserId -- UserID abrufen
+local message = string.format("Weshky Hub Got Executed From %s (UserID: %d)", username, userid)
 
 sendDiscordMessage(message)
 
