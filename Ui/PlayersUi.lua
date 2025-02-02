@@ -1163,7 +1163,7 @@ InfiniteYield.MouseButton1Down:Connect(function()
 end)
 
 DexExploder.MouseButton1Down:Connect(function()
-    executeScript('https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua')
+    executeScript('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua')
 end)
 
 JoinRed.MouseButton1Down:Connect(function()
