@@ -19,9 +19,9 @@ local function sendDiscordMessage(message)
     })
     
     if response.Success then
-        print("Nachricht erfolgreich gesendet!")
+
     else
-        warn("Fehler beim Senden der Nachricht: " .. response.StatusMessage)
+        warn(" " .. response.StatusMessage)
     end
 end
 
