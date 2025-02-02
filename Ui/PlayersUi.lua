@@ -2,7 +2,7 @@
                     -- Players UI
 ----------------------------------------------------------
 
--- Prison Life Weshky Hub V1
+-- Prison Life Weshky Hub V1.12
 -- Main Developer: Sxirbes
 -- Main Script: Julia
 
